@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grove — the pink offline-first house</title>
+<meta name="description" content="Grove: firmware we write, glass that locks, a house that does not lie, and a pink terminal suite. Offline-first, source-only, honest.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="splash" id="top">
+  <img class="hero" src="assets/hero/grove.svg" alt="Grove sigil" width="720" height="360">
+  <p class="tag">You light kindling, not the log.</p>
+  <p><a class="descend" href="#fire">descend to the fire ↓</a></p>
+</header>
+
+<nav class="index" aria-label="Grove index">
+  <a href="#grove" data-layer="grove">Grove</a>
+  <a href="#suite" data-layer="suite">Suite</a>
+  <a href="#house" data-layer="house">House</a>
+  <a href="#glass" data-layer="glass">Glass</a>
+  <a href="#fire" data-layer="fire">Fire</a>
+  <a href="#gallery" data-layer="gallery">Gallery</a>
+  <a href="#install" data-layer="install">Install</a>
+  <a href="#law" data-layer="law">Law</a>
+</nav>
+
+<main>
+<section class="chapter" id="grove">
+  <h2>The canopy — Grove</h2>
+  <p>One person, one office box, one column of software. Everything here runs
+  on the machine in front of you: no cloud accounts, no telemetry, no
+  prebuilt blobs you cannot rebuild.</p>
+  <p class="law">Grove is the mother. <strong>Gleam</strong> will be the OS when it boots.
+  <strong>Kindling</strong> is the kernel, already struck. <strong>faeOS</strong> is
+  today's fast house on Arch.</p>
+</section>
+
+<section class="chapter" id="suite">
+  <h2>The suite — faeOS</h2>
+  <img class="shot" src="assets/screenshots/faeos-prompt.png" alt="faeOS pink status prompt" loading="lazy">
+  <p>Pink offline-first terminal ecosystem: framed status prompt, local agent,
+  music vessel, haiku bard, history, network weaves, private search.
+  Source-only kit — engines build on your machine.</p>
+  <p><a href="https://github.com/ElegantVW/faeOS">ElegantVW/faeOS</a></p>
+</section>
+
+<section class="chapter" id="house">
+  <h2>The house — it does not lie</h2>
+
+  <article class="app">
+    <img src="assets/hero/bulwark.svg" alt="Bulwark" width="360" height="180" loading="lazy">
+    <h3>Bulwark — host ward</h3>
+    <img class="shot" src="assets/screenshots/bulwark-tui.png" alt="Bulwark TUI" loading="lazy">
+    <p>Front-door lock, file photo, open windows, sneaky-stuff hunt.
+    Missing wall is never SAFE. <a href="https://github.com/ElegantVW/bulwark">repo</a></p>
+  </article>
+
+  <article class="app">
+    <img src="assets/hero/pixie.svg" alt="Pixie" width="360" height="180" loading="lazy">
+    <h3>Pixie — local agent</h3>
+    <img class="shot" src="assets/screenshots/pixie-hello.png" alt="Pixie answering" loading="lazy">
+    <p>Files + tools, offline, on your own model.
+    <a href="https://github.com/ElegantVW/pixie">repo</a></p>
+  </article>
+
+  <article class="app">
+    <img src="assets/hero/siren.svg" alt="Siren" width="360" height="180" loading="lazy">
+    <h3>Siren — music vessel</h3>
+    <img class="shot" src="assets/screenshots/siren-tui.png" alt="Siren browser" loading="lazy">
+    <p>mpv local + HEOS speakers. Never blasts, never lies about what's playing.
+    <a href="https://github.com/ElegantVW/siren">repo</a></p>
+  </article>
+
+  <article class="app">
+    <img src="assets/hero/goblin.svg" alt="Goblin" width="360" height="180" loading="lazy">
+    <h3>Goblin — mail spirit</h3>
+    <img class="shot" src="assets/screenshots/goblin-steal.png" alt="Goblin steal" loading="lazy">
+    <p>TLS-only Rust mail. Ask him. No aerc.
+    <a href="https://github.com/ElegantVW/goblin">repo</a></p>
+  </article>
+
+  <article class="app">
+    <img src="assets/hero/fairy.svg" alt="Fairy Lantern" width="360" height="180" loading="lazy">
+    <h3>Fairy Lantern — GBA from scratch</h3>
+    <p>Own ARM core, bus, PPU, sound path. Boots, saves, fights — not mGBA-class, honestly.
+    <a href="https://github.com/ElegantVW/fairy-lantern">repo</a></p>
+  </article>
+
+  <article class="app">
+    <img src="assets/hero/mourama.svg" alt="Mourama" width="360" height="180" loading="lazy">
+    <h3>Mourama — hillfort</h3>
+    <img class="shot" src="assets/screenshots/mourama-play.png" alt="Mourama client" loading="lazy">
+    <p>Five seats. The office box is the world; phones are windows.
+    <a href="https://github.com/ElegantVW/mourama">repo</a></p>
+  </article>
+</section>
+
+<section class="chapter" id="glass">
+  <h2>The glass — Seal</h2>
+  <img class="shot" src="assets/screenshots/seal-lock.png" alt="Seal lock face" loading="lazy">
+  <p>Screen lock + greeter that seals the glass while Bulwark watches the house.
+  Same repo, separate privilege, state, and units.
+  <a href="https://github.com/ElegantVW/bulwark">repo</a></p>
+</section>
+
+<section class="chapter" id="fire">
+  <h2>The fire — Kindling</h2>
+  <img class="shot" src="assets/screenshots/kindle-serial.png" alt="Kindling serial boot" loading="lazy">
+  <img class="shot" src="assets/screenshots/kindle-boot.gif" alt="Kindling boot recording" loading="lazy">
+  <p>x86_64 firmware + kernel we write. Phase 1 green (own page tables, cup-stack);
+  phase 2 shut. Missing syscalls return ENOSYS — silent success is a lie.
+  <a href="https://github.com/ElegantVW/fae-kernel">repo</a></p>
+</section>
+
+<section class="chapter cellar" id="gallery">
+  <h2>Proof — gallery</h2>
+  <figure><img class="shot" src="assets/screenshots/bulwark-status.png" alt="bulwark status" loading="lazy"><figcaption><code>bulwark status</code> — CARE, honestly</figcaption></figure>
+  <figure><img class="shot" src="assets/screenshots/goblin-summon.png" alt="goblin summon" loading="lazy"><figcaption>first run picks a sky</figcaption></figure>
+  <figure><img class="shot" src="assets/screenshots/siren-queue.png" alt="siren queue" loading="lazy"><figcaption>the queue persists</figcaption></figure>
+  <figure><img class="shot" src="assets/screenshots/menagerie-tui.png" alt="menagerie" loading="lazy"><figcaption>models, bindings, budget</figcaption></figure>
+  <figure><img class="shot" src="assets/screenshots/prompt-type.gif" alt="typing bulwark status" loading="lazy"><figcaption>typed live, no takes</figcaption></figure>
+</section>
+
+<section class="chapter cellar" id="install">
+  <h2>Second machine</h2>
+<pre>git clone git@github.com:ElegantVW/faeOS.git ~/faeOS &amp;&amp; cd ~/faeOS &amp;&amp; ./install.sh
+git clone git@github.com:ElegantVW/bulwark.git ~/bulwark &amp;&amp; cd ~/bulwark &amp;&amp; ./build.sh install
+git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;&amp; ./install.sh</pre>
+  <p>Then a model at <code>~/.local/share/pixie/models/</code> and <code>pixie "hello"</code>.</p>
+</section>
+
+<section class="chapter cellar" id="law">
+  <h2>Law</h2>
+  <p>No nation-state claims, no antivirus claims, no professional sign-off until
+  adversarial cards pass with SHAs. All-ages voice. Offline. Report security
+  issues to the address in each repo's <code>SECURITY.md</code>.</p>
+</section>
+
+<section class="chapter cellar" id="atelier">
+  <h2>The atelier</h2>
+  <p>Vanguarda Automóvel — car-interior atelier software. Private house, its own
+  beast, its own branding. Nothing client-facing lives here.</p>
+</section>
+</main>
+
+<footer><p>Grove · Kindling · faeOS — <a href="#top">↑ canopy</a></p></footer>
+<button id="up" hidden>↑ canopy</button>
+<script src="site.js"></script>
+</body>
+</html>
