@@ -1,6 +1,6 @@
 ![Grove hero](assets/hero/grove.svg)
 
-# Grove — the pink offline-first house
+# Grove — the pink offline-first house 🌱
 
 Static front door for the whole column: fire → glass → house → suite.
 Opens at the splash, drops you at the fire, climb by scrolling up.
