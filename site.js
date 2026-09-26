@@ -1,11 +1,8 @@
 // Grove site: start at the fire, climb on scroll.
 (function () {
   "use strict";
-  // Land on #fire on first visit (no animation); honor deep links.
-  if (!location.hash) {
-    var fire = document.getElementById("fire");
-    if (fire) fire.scrollIntoView();
-  }
+  // Page reads top-down in stack order: splash, fire, glass, house,
+  // suite, grove, then the cellar. No auto-jump anywhere.
   // Ember-rise chapters as they enter.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
@@ -32,11 +29,10 @@
     });
   }, { rootMargin: "-40% 0px -50% 0px" });
   document.querySelectorAll("main .chapter").forEach(function (s) { nav.observe(s); });
-  // Up button: appears once the canopy scrolls away.
+  // Up button: appears once the splash scrolls away.
   var up = document.getElementById("up");
-  var grove = document.getElementById("grove");
   function onScroll() {
-    up.hidden = grove.getBoundingClientRect().bottom > 0;
+    up.hidden = window.scrollY < window.innerHeight;
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   up.addEventListener("click", function () {
