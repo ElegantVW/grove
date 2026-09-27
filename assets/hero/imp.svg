@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360">
+<rect width="720" height="360" fill="#1A1218"/>
+<g font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="26" text-anchor="middle">
+<text x="360" y="116" fill="#C89BE0">,   ,</text>
+<text x="360" y="146" fill="#C89BE0"> \ /</text>
+<text x="360" y="176" fill="#C89BE0">  X</text>
+<text x="360" y="206" fill="#C89BE0"> \|/</text>
+</g>
+<text x="360" y="292" fill="#F0E4EE" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="30" font-weight="bold" text-anchor="middle">Imp</text>
+<text x="360" y="322" fill="#6B6FA8" font-family="DejaVu Sans Mono, monospace" font-size="16" text-anchor="middle">a red port, sealed</text>
+</svg>
