@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#1A1218"/>
+<g font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="76" text-anchor="middle">
+<text x="540" y="420" fill="#D4B4E8">  *  </text>
+<text x="540" y="508" fill="#D4B4E8"> /|\ </text>
+<text x="540" y="596" fill="#D4B4E8">/ | \</text>
+<text x="540" y="684" fill="#D4B4E8">  |  </text>
+<text x="540" y="772" fill="#D4B4E8"> / \ </text>
+<text x="540" y="860" fill="#D4B4E8">/   \</text>
+</g>
+<text x="540" y="1108" fill="#F0E4EE" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="84" font-weight="bold" text-anchor="middle">Kindling</text>
+<text x="540" y="1188" fill="#6B6FA8" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="38" text-anchor="middle">x86_64 kernel we write</text>
+<text x="540" y="1780" fill="#6B6FA8" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="32" text-anchor="middle">ElegantVW/fae-kernel</text>
+</svg>

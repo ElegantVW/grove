@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#1A1218"/>
+<g font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="76" text-anchor="middle">
+<text x="540" y="420" fill="#E8A0B4">   *   </text>
+<text x="540" y="508" fill="#E8A0B4">  \|/  </text>
+<text x="540" y="596" fill="#E8A0B4">   |   </text>
+<text x="540" y="684" fill="#E8A0B4">---*---</text>
+<text x="540" y="772" fill="#E8A0B4">   |   </text>
+<text x="540" y="860" fill="#E8A0B4">  /|\  </text>
+<text x="540" y="948" fill="#E8A0B4">   *   </text>
+</g>
+<text x="540" y="1196" fill="#F0E4EE" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="84" font-weight="bold" text-anchor="middle">Pixie</text>
+<text x="540" y="1276" fill="#6B6FA8" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="38" text-anchor="middle">offline AI agent on your machine</text>
+<text x="540" y="1780" fill="#6B6FA8" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="32" text-anchor="middle">ElegantVW/pixie</text>
+</svg>
