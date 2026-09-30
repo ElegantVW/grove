@@ -1,6 +1,9 @@
-// Grove site: start at the fire, climb on scroll.
+// Grove site: start at the shelf, climb at will.
 (function () {
   "use strict";
+  // Arm the rise effect only when JS runs (no-JS keeps content visible).
+  document.documentElement.classList.add("fx");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   // Page reads top-down in stack order: splash, fire, glass, house,
   // suite, grove, then the cellar. No auto-jump anywhere.
   // Ember-rise chapters as they enter.
@@ -39,4 +42,17 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   onScroll();
+  // Clips: pause offscreen, honor reduced motion.
+  var clips = Array.prototype.slice.call(document.querySelectorAll("video.clip"));
+  if (reduceMotion) {
+    clips.forEach(function (v) { v.pause(); v.removeAttribute("autoplay"); v.setAttribute("controls", ""); });
+  } else if ("IntersectionObserver" in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.play().catch(function () {}); }
+        else { e.target.pause(); }
+      });
+    }, { threshold: 0.25 });
+    clips.forEach(function (v) { vio.observe(v); });
+  }
 })();

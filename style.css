@@ -25,6 +25,9 @@ h1, h2, h3 {
   color: var(--lilac);
   line-height: 1.2;
 }
+h2 { font-size: 2rem; letter-spacing: -0.02em; }
+h3 { font-size: 1.35rem; }
+.lede { max-width: 44rem; margin: 0 auto; color: var(--parchment); }
 a { color: var(--rose); }
 code, pre {
   font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace;
@@ -72,14 +75,16 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
 /* chapters */
 main { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
 .chapter {
-  min-height: 92vh;
-  padding: 8vh 0;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--shadow);
+}
+/* rise is progressive enhancement: hidden only when JS arms it */
+html.fx .chapter {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.chapter.risen { opacity: 1; transform: none; }
+html.fx .chapter.risen { opacity: 1; transform: none; }
 .chapter:first-of-type { border-top: none; }
 .cellar { min-height: auto; }
 .law strong { color: var(--gold); }
@@ -89,7 +94,29 @@ main { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
   padding: 1.2rem;
   margin: 1.6rem 0;
 }
-.app h3 { margin-top: 0.4rem; }
+.app h3 { margin-top: 0.4rem; color: var(--app, var(--lilac)); }
+.app { border-top: 2px solid var(--app, var(--shadow)); }
+/* shelf grid */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.8rem;
+  margin: 1.6rem 0;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border: 1px solid var(--shadow);
+  border-top: 2px solid var(--app, var(--lilac));
+  border-radius: 10px;
+  text-decoration: none;
+}
+.tile img { width: 100%; height: auto; border-radius: 6px; }
+.tile strong { color: var(--app, var(--parchment)); font-size: 1rem; }
+.tile span { color: var(--dusk); font-size: 0.8rem; line-height: 1.4; }
+.tile:hover { border-color: var(--app, var(--rose)); }
 .shot {
   display: block;
   max-width: 100%;

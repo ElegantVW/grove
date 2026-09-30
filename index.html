@@ -4,7 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grove — the pink offline-first house</title>
-<meta name="description" content="Grove: firmware we write, glass that locks, a house that does not lie, and a pink terminal suite. Offline-first, source-only, honest.">
+<meta name="description" content="Grove: the front door of a pink, offline-first terminal ecosystem — x86_64 firmware we write, a screen lock that seals the glass, and faeOS. No cloud, no telemetry.">
+<meta property="og:title" content="Grove — the pink offline-first house">
+<meta property="og:description" content="Firmware we write, glass that locks, a house that does not lie, and a pink terminal suite. Offline-first, source-only, honest.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/story/grove.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/story/grove.png">
+<link rel="icon" type="image/svg+xml" href="assets/hero/grove.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +19,14 @@
 <header class="splash" id="top">
   <img class="hero" src="assets/hero/grove.svg" alt="Grove sigil" width="720" height="360">
   <p class="tag">You light kindling, not the log.</p>
-  <p><a class="descend" href="#fire">descend to the fire ↓</a></p>
+  <p class="lede">Grove is the front door of a pink, offline-first terminal
+  ecosystem: firmware we write, a screen lock that seals the glass, a house
+  that does not lie — no cloud, no telemetry, no blobs you cannot rebuild.</p>
+  <p><a class="descend" href="#shelf">meet the shelf ↓</a></p>
 </header>
 
 <nav class="index" aria-label="Grove index">
+  <a href="#shelf" data-layer="shelf">Shelf</a>
   <a href="#fire" data-layer="fire">Fire</a>
   <a href="#glass" data-layer="glass">Glass</a>
   <a href="#house" data-layer="house">House</a>
@@ -27,6 +38,22 @@
 </nav>
 
 <main>
+<section class="chapter cellar" id="shelf">
+  <h2>The shelf — everything, one glance</h2>
+  <div class="shelf">
+    <a class="tile" style="--app:#D4B4E8" href="#fire"><img src="assets/hero/kindling.svg" alt="Kindling" loading="lazy"><strong>Kindling</strong><span>x86_64 kernel we write</span></a>
+    <a class="tile" style="--app:#F0D8A0" href="https://github.com/ElegantVW/bulwark"><img src="assets/hero/bulwark.svg" alt="Bulwark" loading="lazy"><strong>Bulwark</strong><span>host firewall + glass screen lock</span></a>
+    <a class="tile" style="--app:#E8A0B4" href="https://github.com/ElegantVW/pixie"><img src="assets/hero/pixie.svg" alt="Pixie" loading="lazy"><strong>Pixie</strong><span>offline AI agent on your machine</span></a>
+    <a class="tile" style="--app:#8EC4C8" href="https://github.com/ElegantVW/siren"><img src="assets/hero/siren.svg" alt="Siren" loading="lazy"><strong>Siren</strong><span>local music + speaker player</span></a>
+    <a class="tile" style="--app:#8FBF9A" href="https://github.com/ElegantVW/goblin"><img src="assets/hero/goblin.svg" alt="Goblin" loading="lazy"><strong>Goblin</strong><span>TLS mail in your terminal</span></a>
+    <a class="tile" style="--app:#E8C070" href="https://github.com/ElegantVW/fairy-lantern"><img src="assets/hero/fairy.svg" alt="Fairy Lantern" loading="lazy"><strong>Fairy Lantern</strong><span>GBA emulator from scratch</span></a>
+    <a class="tile" style="--app:#D8B090" href="https://github.com/ElegantVW/mourama"><img src="assets/hero/mourama.svg" alt="Mourama" loading="lazy"><strong>Mourama</strong><span>Iberian hillfort strategy game</span></a>
+    <a class="tile" style="--app:#FFF8FC" href="https://github.com/ElegantVW/kur"><img src="assets/hero/kur.svg" alt="Kur" loading="lazy"><strong>Kur</strong><span>answers only in haiku</span></a>
+    <a class="tile" style="--app:#C89BE0" href="https://github.com/ElegantVW/imp"><img src="assets/hero/imp.svg" alt="Imp" loading="lazy"><strong>Imp</strong><span>terminal art from a wish</span></a>
+    <a class="tile" style="--app:#E0C090" href="https://github.com/ElegantVW/scroll"><img src="assets/hero/scroll.svg" alt="Scroll" loading="lazy"><strong>Scroll</strong><span>living book + PATH leaf</span></a>
+    <a class="tile" style="--app:#B08CC8" href="https://github.com/ElegantVW/faeOS"><img src="assets/hero/faeos.svg" alt="faeOS" loading="lazy"><strong>faeOS</strong><span>pink offline-first terminal</span></a>
+  </div>
+</section>
 <section class="chapter" id="fire">
   <h2>The fire — Kindling</h2>
   <img class="shot" src="assets/screenshots/kindle-serial.png" alt="Kindling serial boot" loading="lazy">
@@ -48,7 +75,7 @@
 <section class="chapter" id="house">
   <h2>The house — it does not lie</h2>
 
-  <article class="app">
+  <article class="app" style="--app:#F0D8A0">
     <img src="assets/hero/bulwark.svg" alt="Bulwark" width="360" height="180" loading="lazy">
     <h3>Bulwark — host ward</h3>
     <img class="shot" src="assets/screenshots/bulwark-tui.png" alt="Bulwark TUI" loading="lazy">
@@ -57,7 +84,7 @@
     Missing wall is never SAFE. <a href="https://github.com/ElegantVW/bulwark">repo</a></p>
   </article>
 
-  <article class="app">
+  <article class="app" style="--app:#E8A0B4">
     <img src="assets/hero/pixie.svg" alt="Pixie" width="360" height="180" loading="lazy">
     <h3>Pixie — local agent</h3>
     <img class="shot" src="assets/screenshots/pixie-hello.png" alt="Pixie answering" loading="lazy">
@@ -66,7 +93,7 @@
     <a href="https://github.com/ElegantVW/pixie">repo</a></p>
   </article>
 
-  <article class="app">
+  <article class="app" style="--app:#8EC4C8">
     <img src="assets/hero/siren.svg" alt="Siren" width="360" height="180" loading="lazy">
     <h3>Siren — music vessel</h3>
     <img class="shot" src="assets/screenshots/siren-tui.png" alt="Siren browser" loading="lazy">
@@ -75,7 +102,7 @@
     <a href="https://github.com/ElegantVW/siren">repo</a></p>
   </article>
 
-  <article class="app">
+  <article class="app" style="--app:#8FBF9A">
     <img src="assets/hero/goblin.svg" alt="Goblin" width="360" height="180" loading="lazy">
     <h3>Goblin — mail spirit</h3>
     <img class="shot" src="assets/screenshots/goblin-steal.png" alt="Goblin steal" loading="lazy">
@@ -84,7 +111,7 @@
     <a href="https://github.com/ElegantVW/goblin">repo</a></p>
   </article>
 
-  <article class="app">
+  <article class="app" style="--app:#E8C070">
     <img src="assets/hero/fairy.svg" alt="Fairy Lantern" width="360" height="180" loading="lazy">
     <h3>Fairy Lantern — GBA from scratch</h3>
     <p>Own ARM core, bus, PPU, sound path. Boots, saves, fights — not mGBA-class, honestly.
@@ -92,7 +119,7 @@
     <video class="clip" src="assets/story/fairy.mp4" poster="assets/story/fairy.png" muted loop playsinline autoplay preload="metadata" width="270" height="480"></video>
   </article>
 
-  <article class="app">
+  <article class="app" style="--app:#D8B090">
     <img src="assets/hero/mourama.svg" alt="Mourama" width="360" height="180" loading="lazy">
     <h3>Mourama — hillfort</h3>
     <img class="shot" src="assets/screenshots/mourama-play.png" alt="Mourama client" loading="lazy">
@@ -100,7 +127,7 @@
     <a href="https://github.com/ElegantVW/mourama">repo</a></p>
     <video class="clip" src="assets/story/mourama.mp4" poster="assets/story/mourama.png" muted loop playsinline autoplay preload="metadata" width="270" height="480"></video>
   </article>
-  <article class="app">
+  <article class="app" style="--app:#FFF8FC">
     <img src="assets/hero/kur.svg" alt="Kur" width="360" height="180" loading="lazy">
     <h3>Kur — haiku dragon 🐉</h3>
     <img class="shot" src="assets/screenshots/kur-haiku.png" alt="Kur haiku" loading="lazy">
@@ -108,7 +135,7 @@
     <a href="https://github.com/ElegantVW/kur">repo</a></p>
     <video class="clip" src="assets/story/kur.mp4" poster="assets/story/kur.png" muted loop playsinline autoplay preload="metadata" width="270" height="480"></video>
   </article>
-  <article class="app">
+  <article class="app" style="--app:#E0C090">
     <img src="assets/hero/scroll.svg" alt="Scroll" width="360" height="180" loading="lazy">
     <h3>Scroll — living book 📜</h3>
     <img class="shot" src="assets/screenshots/scroll-summon.png" alt="Scroll book" loading="lazy">
@@ -171,7 +198,9 @@ git clone git@github.com:ElegantVW/scroll.git ~/scroll</pre>
 </section>
 </main>
 
-<footer><p>Grove · Kindling · faeOS — <a href="#top">↑ canopy</a></p></footer>
+<footer><p>Grove · Kindling · faeOS — <a href="#top">↑ canopy</a></p>
+<p>Static front door of a pink, offline-first terminal ecosystem. MIT —
+<a href="https://github.com/ElegantVW">ElegantVW</a>. No telemetry, no accounts, no blobs you cannot rebuild.</p></footer>
 <button id="up" hidden>↑ top</button>
 <script src="site.js"></script>
 </body>
