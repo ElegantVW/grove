@@ -6,7 +6,10 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   // Page reads top-down in stack order: splash, fire, glass, house,
   // suite, grove, then the cellar. No auto-jump anywhere.
-  // Ember-rise chapters as they enter.
+  // Ember-rise chapters as they enter. Threshold is 0 on purpose:
+  // ratios are relative to the *element*, and #house is ~13k px tall —
+  // it can never reach a fractional threshold on a normal viewport,
+  // which left it invisible forever. Any pixel in view rises it.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) {
@@ -14,10 +17,17 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0, rootMargin: "0px 0px -5% 0px" });
   document.querySelectorAll(".chapter,.splash").forEach(function (el) {
     io.observe(el);
   });
+  // Safety net: if the observer never fires (odd viewport, old engine),
+  // content must still appear. Visibility is never gated on animation.
+  setTimeout(function () {
+    document.querySelectorAll(".chapter,.splash").forEach(function (el) {
+      el.classList.add("risen");
+    });
+  }, 2000);
   // Index highlight.
   var links = Array.prototype.slice.call(document.querySelectorAll(".index a"));
   var byId = {};
