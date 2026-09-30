@@ -142,6 +142,19 @@ html.fx .chapter.risen { opacity: 1; transform: none; }
   margin: 1rem 0;
   background: var(--night);
 }
+/* live text sigils — no images, no backgrounds to strip */
+.sigil {
+  color: var(--app, var(--parchment));
+  text-shadow: 0 0 14px var(--app, transparent);
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.tile .sigil { font-size: 0.8rem; }
 figure { margin: 1.6rem 0; }
 figcaption { color: var(--dusk); font-size: 0.9rem; }
 footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
