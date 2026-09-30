@@ -104,23 +104,84 @@
       cx.globalAlpha = 1;
     } else {
       var blip = null, blipLeft = 0;
+      var sweep = null;       // {y, h, vy} scanline band sweeping down
+      var nextSweep = 4 + Math.random() * 5;
+      var shifts = [];        // [{y, h, dx, left}] row-shift slices
+      var nextShift = 2 + Math.random() * 4;
+      var flashLeft = 0;      // full-frame burst lift
+      var nextFlash = 9 + Math.random() * 8;
+      var last = 0;
+      function drawStar(s, dx, color, alpha) {
+        cx.globalAlpha = alpha; cx.fillStyle = color || s.c;
+        cx.fillRect(s.x + (dx || 0), s.y, s.r, s.r);
+      }
       (function tick(t) {
-        cx.clearRect(0, 0, W, H);
+        var dt = Math.min((t - last) / 1000 || 0.016, 0.1);
+        last = t;
         var time = t / 1000;
+        cx.clearRect(0, 0, W, H);
         stars.forEach(function (s) {
-          cx.globalAlpha = s.base + s.amp * Math.sin(time * s.sp + s.ph);
-          cx.fillStyle = s.c;
-          cx.fillRect(s.x, s.y, s.r, s.r);
+          drawStar(s, 0, null, s.base + s.amp * Math.sin(time * s.sp + s.ph));
         });
-        // occasional glitch blip: one star flashes wrong for a few frames
+        // --- glitch blip: one star flashes wrong for a few frames
         if (blipLeft <= 0 && Math.random() < 0.02) {
           blip = stars[(Math.random() * stars.length) | 0];
           blipLeft = 3;
         }
         if (blip && blipLeft > 0) {
-          cx.globalAlpha = 0.95; cx.fillStyle = "#FFFFFF";
-          cx.fillRect(blip.x + 2, blip.y - 1, blip.r, blip.r);
+          drawStar(blip, 2, "#FFFFFF", 0.95);
+          drawStar(blip, -2, "#8EC4C8", 0.5);
           blipLeft--;
+        }
+        // --- scanline sweep: palette band with RGB-split stars inside
+        nextSweep -= dt;
+        if (!sweep && nextSweep <= 0) {
+          sweep = { y: -60, h: 30 + Math.random() * 50, vy: H / 0.9 };
+          nextSweep = 5 + Math.random() * 7;
+        }
+        if (sweep) {
+          sweep.y += sweep.vy * dt;
+          if (sweep.y > H + 60) { sweep = null; }
+          else {
+            cx.globalAlpha = 0.06; cx.fillStyle = "#B08CC8";
+            cx.fillRect(0, sweep.y, W, sweep.h);
+            cx.globalAlpha = 1;
+            stars.forEach(function (s) {
+              if (s.y >= sweep.y && s.y <= sweep.y + sweep.h) {
+                drawStar(s, 3, "#8EC4C8", 0.7);
+                drawStar(s, -3, "#E8A0B4", 0.7);
+              }
+            });
+          }
+        }
+        // --- row-shift slices: a few rows jump sideways, briefly
+        nextShift -= dt;
+        if (nextShift <= 0) {
+          shifts = [];
+          var rows = 2 + ((Math.random() * 3) | 0);
+          for (var i = 0; i < rows; i++) {
+            shifts.push({
+              y: Math.random() * H, h: 6 + Math.random() * 10,
+              dx: (Math.random() < 0.5 ? -1 : 1) * (4 + Math.random() * 8),
+              left: 4 + ((Math.random() * 4) | 0)
+            });
+          }
+          nextShift = 3 + Math.random() * 5;
+        }
+        shifts = shifts.filter(function (r) { return r.left > 0; });
+        shifts.forEach(function (r) {
+          r.left--;
+          stars.forEach(function (s) {
+            if (s.y >= r.y && s.y <= r.y + r.h) drawStar(s, r.dx, "#F0E4EE", 0.35);
+          });
+        });
+        // --- burst lift: whole sky breathes light for 2 frames
+        nextFlash -= dt;
+        if (nextFlash <= 0) { flashLeft = 2; nextFlash = 9 + Math.random() * 9; }
+        if (flashLeft > 0) {
+          cx.globalAlpha = 0.045; cx.fillStyle = "#F0E4EE";
+          cx.fillRect(0, 0, W, H);
+          flashLeft--;
         }
         cx.globalAlpha = 1;
         requestAnimationFrame(tick);
