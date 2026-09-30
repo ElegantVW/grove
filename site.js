@@ -65,4 +65,66 @@
     }, { threshold: 0.25 });
     clips.forEach(function (v) { vio.observe(v); });
   }
+  // Glitch titles + outer-space starfield.
+  document.querySelectorAll("main .chapter h2").forEach(function (h) {
+    h.setAttribute("data-text", h.textContent);
+  });
+  var sky = document.getElementById("stars");
+  if (sky && sky.getContext) {
+    var cx = sky.getContext("2d");
+    var palette = ["#D4B4E8", "#E8A0B4", "#8EC4C8", "#F0D8A0", "#B08CC8", "#8FBF9A", "#E8C070", "#F0E4EE"];
+    var stars = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function seed() {
+      W = window.innerWidth; H = window.innerHeight;
+      sky.width = W * dpr; sky.height = H * dpr;
+      sky.style.width = W + "px"; sky.style.height = H + "px";
+      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stars = [];
+      var n = Math.floor((W * H) / 9000);
+      for (var i = 0; i < n; i++) {
+        stars.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() < 0.85 ? 1 : 2,
+          c: palette[(Math.random() * palette.length) | 0],
+          base: 0.25 + Math.random() * 0.45,
+          amp: 0.15 + Math.random() * 0.3,
+          sp: 0.4 + Math.random() * 1.4,
+          ph: Math.random() * 6.28
+        });
+      }
+    }
+    seed();
+    window.addEventListener("resize", seed);
+    if (reduceMotion) {
+      // one static frame: space, but make it sit still
+      stars.forEach(function (s) {
+        cx.globalAlpha = s.base; cx.fillStyle = s.c;
+        cx.fillRect(s.x, s.y, s.r, s.r);
+      });
+      cx.globalAlpha = 1;
+    } else {
+      var blip = null, blipLeft = 0;
+      (function tick(t) {
+        cx.clearRect(0, 0, W, H);
+        var time = t / 1000;
+        stars.forEach(function (s) {
+          cx.globalAlpha = s.base + s.amp * Math.sin(time * s.sp + s.ph);
+          cx.fillStyle = s.c;
+          cx.fillRect(s.x, s.y, s.r, s.r);
+        });
+        // occasional glitch blip: one star flashes wrong for a few frames
+        if (blipLeft <= 0 && Math.random() < 0.02) {
+          blip = stars[(Math.random() * stars.length) | 0];
+          blipLeft = 3;
+        }
+        if (blip && blipLeft > 0) {
+          cx.globalAlpha = 0.95; cx.fillStyle = "#FFFFFF";
+          cx.fillRect(blip.x + 2, blip.y - 1, blip.r, blip.r);
+          blipLeft--;
+        }
+        cx.globalAlpha = 1;
+        requestAnimationFrame(tick);
+      })(0);
+    }
+  }
 })();
