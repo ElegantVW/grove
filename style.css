@@ -98,6 +98,15 @@ main { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
   border: 1px solid var(--shadow);
   margin: 1rem 0;
 }
+.clip {
+  display: block;
+  width: min(240px, 60vw);
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--shadow);
+  margin: 1rem 0;
+  background: var(--night);
+}
 figure { margin: 1.6rem 0; }
 figcaption { color: var(--dusk); font-size: 0.9rem; }
 footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
