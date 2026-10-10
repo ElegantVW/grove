@@ -1,0 +1,4 @@
+# Local screen takes — never ship
+assets/demos/
+__pycache__/
+*.pyc
