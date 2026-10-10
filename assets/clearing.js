@@ -1,16 +1,17 @@
-// The clearing — original Grove air. GBA-shaped voices, not a game tune.
-// G mixolydian, 112 BPM, 32-bar loop. Off until the hush/air button asks.
+// The clearing — original Grove air. GBA-shaped voices, original notes.
+// Town-loop craft + overworld air. G mixolydian, 100 BPM, 16 bars.
+// Off until the hush/air button asks.
 (function (root) {
   "use strict";
 
-  var BPM = 112;
-  var LOOP = 32 * 16; // 16ths
+  var BPM = 100;
+  var LOOP = 16 * 16; // 16ths
   var LOOK = 0.12;
   var PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
 
   var ctx = null;
   var master = null;
-  var pulse25 = null;
+  var pulse12 = null;
   var pulse50 = null;
   var waveTable = null;
   var noiseBuf = null;
@@ -61,116 +62,67 @@
     events[step].push({ ch: 4, midi: 0, len: 2, vol: vol });
   }
 
-  // Pulse 1 — path. Opening G A B D, not Pallet Town.
+  // Pulse 1 — hook. Dotted, rests, mixolydian F. Not a scale walk.
   lay(1, [
-    "G4:4 A4:4 B4:4 D5:4",
-    "E5:6 D5:2 B4:4 A4:4",
-    "G4:4 B4:4 D5:8",
-    "C5:4 B4:4 A4:8",
-    "D5:4 E5:4 G5:4 E5:4",
-    "D5:4 B4:4 A4:4 G4:4",
-    "A4:4 B4:4 D5:4 E5:4",
-    "D5:4 C5:4 B4:4 A4:4",
-    "G5:4 D5:4 B4:4 G4:4",
-    "A5:4 E5:4 C5:4 A4:4",
-    "B5:4 G5:4 D5:8",
-    "A5:4 G5:4 E5:4 D5:4",
-    "G5:4 A5:4 B5:4 D6:4",
-    "E5:4 D5:4 B4:4 A4:4",
-    "G4:4 A4:4 B4:4 D5:4",
-    "E5:4 D5:4 C5:2 B4:2 A4:4",
-    "D5:4 F5:4 G5:4 A5:4",
-    "G5:6 E5:2 D5:4 B4:4",
-    "C5:4 D5:4 E5:4 G5:4",
-    "F5:4 E5:4 D5:4 C5:4",
-    "B4:4 D5:4 G5:4 B5:4",
-    "A5:4 G5:4 E5:4 D5:4",
-    "C5:4 E5:4 G5:4 F5:4",
-    "E5:4 D5:4 B4:4 A4:4",
-    "G4:4 A4:4 B4:4 D5:4",
-    "E5:6 D5:2 B4:4 A4:4",
-    "G4:4 B4:4 D5:8",
-    "C5:4 B4:4 A4:8",
-    "D5:4 E5:4 G5:4 E5:4",
-    "D5:4 B4:4 A4:4 G4:4",
-    "A4:4 B4:4 D5:4 E5:4",
-    "D5:4 B4:4 G4:8"
-  ], 11);
+    "G5:4 .:4 D5:4 .:4",
+    "B4:6 .:2 A4:8",
+    "D5:4 G5:4 A5:2 .:2 G5:4",
+    "F5:6 .:2 D5:8",
+    "G5:4 .:4 D5:4 B4:4",
+    "A4:6 .:2 G4:8",
+    "C5:4 .:2 B4:2 A4:4 .:4",
+    "D5:4 .:4 G4:8",
+    "B4:8 D5:4 .:4",
+    "A4:8 G4:8",
+    "F4:8 A4:4 .:4",
+    "G4:16",
+    "D5:4 .:4 B4:4 .:4",
+    "A4:8 F4:8",
+    "G4:4 B4:4 D5:4 .:4",
+    "G4:12 .:4"
+  ], 10);
 
-  // Pulse 2 — thirds under the path; B section is marimba plucks.
+  // Pulse 2 — answers in the holes; quiet echo. No 16th plucks.
   lay(2, [
+    ".:4 D4:4 .:4 B3:4",
+    ".:8 G3:8",
+    ".:10 B3:2 D4:4",
+    ".:6 C4:2 A3:8",
+    ".:4 D4:4 .:4 G3:4",
+    ".:8 B3:8",
+    ".:4 E3:2 .:6 G3:4",
+    ".:4 B3:4 D4:8",
+    ".:8 G3:4 D4:4",
+    "E3:8 D3:8",
+    "C4:8 .:4 F3:4",
     "B3:8 D4:8",
-    "E3:8 C4:8",
-    "B3:8 D4:8",
-    "A3:8 C4:8",
-    "D4:8 G3:8",
-    "B3:8 D4:8",
-    "C4:8 E4:8",
-    "D4:8 C4:8",
-    "D4:8 G3:8",
-    "E4:8 A3:8",
-    "D4:8 G3:8",
-    "C4:8 E4:8",
-    "D4:8 G4:8",
-    "B3:8 D4:8",
-    "B3:8 D4:8",
-    "C4:8 B3:8",
-    "G4:2 .:2 D5:2 .:2 A4:2 .:2 D5:2 .:2",
-    "G4:2 .:2 E5:2 .:2 B4:2 .:2 D5:2 .:2",
-    "A4:2 .:2 E5:2 .:2 C5:2 .:2 G4:2 .:2",
-    "F4:2 .:2 D5:2 .:2 A4:2 .:2 C5:2 .:2",
-    "G4:2 .:2 D5:2 .:2 B4:2 .:2 G5:2 .:2",
-    "A4:2 .:2 G4:2 .:2 E4:2 .:2 D5:2 .:2",
-    "C5:2 .:2 E4:2 .:2 G4:2 .:2 F4:2 .:2",
-    "E4:2 .:2 D4:2 .:2 B3:2 .:2 A3:2 .:2",
-    "B3:8 D4:8",
-    "E3:8 C4:8",
-    "B3:8 D4:8",
-    "A3:8 C4:8",
-    "D4:8 G3:8",
-    "B3:8 D4:8",
-    "C4:8 E4:8",
+    ".:4 G3:4 .:4 D4:4",
+    "C4:8 A3:8",
+    ".:12 D4:4",
     "D4:8 B3:8"
-  ], 6);
+  ], 5);
 
-  // Wave — walking bass. Mixolydian F in the turnarounds.
+  // Wave — half notes, root–fifth, one walk per eight bars.
   lay(3, [
     "G2:8 D3:8",
-    "G2:8 F2:8",
     "G2:8 D3:8",
-    "C3:8 D3:8",
     "G2:8 D3:8",
-    "G2:8 F2:8",
-    "E2:8 C3:8",
-    "D3:8 G2:8",
-    "G2:8 D3:8",
-    "A2:8 E2:8",
-    "G2:8 D3:8",
-    "C3:8 E2:8",
-    "G2:8 D3:8",
-    "G2:8 F2:8",
-    "E2:8 C3:8",
-    "D3:8 G2:8",
-    "G2:8 F2:8",
-    "E2:8 D3:8",
-    "C3:8 G2:8",
-    "F2:8 C3:8",
-    "G2:8 D3:8",
-    "A2:8 E2:8",
-    "C3:8 G2:8",
     "F2:8 D3:8",
     "G2:8 D3:8",
-    "G2:8 F2:8",
     "G2:8 D3:8",
-    "C3:8 D3:8",
+    "C3:8 A2:8",
+    "D3:8 G2:8",
+    "E2:8 B2:8",
+    "A2:8 E2:8",
+    "F2:8 C3:8",
+    "G2:16",
+    "D3:8 G2:8",
+    "F2:8 C3:8",
     "G2:8 D3:8",
-    "G2:8 F2:8",
-    "E2:8 C3:8",
-    "D3:4 G2:12"
-  ], 9);
+    "G2:12 D2:4"
+  ], 8);
 
-  crunch(19, 12, 3);
-  crunch(23, 12, 3);
+  crunch(7, 14, 2);
 
   function pulseWave(duty) {
     var n = 32;
@@ -215,7 +167,7 @@
     var coarse = root.matchMedia && root.matchMedia("(pointer: coarse)").matches;
     master.gain.value = coarse ? 0.055 : 0.09;
     master.connect(ctx.destination);
-    pulse25 = pulseWave(0.25);
+    pulse12 = pulseWave(0.125);
     pulse50 = pulseWave(0.5);
     waveTable = makeWaveTable();
     noiseBuf = makeNoise();
@@ -262,7 +214,7 @@
   }
 
   function playWave(ev, t) {
-    playPulse(ev, t, waveTable, 0.1, 0.55);
+    playPulse(ev, t, waveTable, 0.16, 0.7);
   }
 
   function playNoise(ev, t) {
@@ -289,8 +241,8 @@
   }
 
   function voice(ev, t) {
-    if (ev.ch === 1) playPulse(ev, t, pulse25, 0.09, 0.4);
-    else if (ev.ch === 2) playPulse(ev, t, pulse50, ev.len <= 2 ? 0.16 : 0.12, ev.len <= 2 ? 0.08 : 0.35);
+    if (ev.ch === 1) playPulse(ev, t, pulse12, 0.14, 0.55);
+    else if (ev.ch === 2) playPulse(ev, t, pulse50, ev.len <= 4 ? 0.18 : 0.14, ev.len <= 4 ? 0.2 : 0.45);
     else if (ev.ch === 3) playWave(ev, t);
     else playNoise(ev, t);
   }
