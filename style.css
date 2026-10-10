@@ -191,6 +191,19 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
   margin: 0.15rem;
 }
 #book button { cursor: pointer; border-color: var(--rose); color: var(--rose); }
+#murmur-log p { margin: 0.3rem 0; }
+#murmur-form { display: flex; gap: 0.4rem; margin-top: 0.5rem; }
+#murmur-form input, #murmur-form button {
+  background: var(--night);
+  color: var(--parchment);
+  border: 1px solid var(--shadow);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+  font-size: 0.95rem;
+}
+#murmur-form input { flex: 1; }
+#murmur-form button { cursor: pointer; border-color: var(--rose); color: var(--rose); }
 #book h4 { color: var(--gold); margin-bottom: 0.3rem; }
 /* book page swap: soft fade-slide, still with reduced motion */
 #book-page { transition: opacity 0.25s ease, transform 0.25s ease; scroll-margin-top: 4rem; }

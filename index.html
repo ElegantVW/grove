@@ -290,19 +290,14 @@ _|_|_|_
     <pre class="sigil" aria-hidden="true"> ~~~
 ( ~~~ )
  ~~~</pre>
-    <h3>Murmur — babbling glass (faeOS egg quest)</h3>
+    <h3 id="murmur-title">Murmur — babbling glass (faeOS egg quest)</h3>
     <p>Moonring-style oracle for the egg quest. Mostly gibberish, rare clear shards —
-    never a walkthrough, never hatches alone. In-tree faeOS app (<code>murmur</code>), not a standalone repo.</p>
-    <pre>you:  ash and egg
-glass: grey rites under
-
-you:  help
-glass: the pane laughs in grey
-       mirr thul keth skar skar aen umbr nyr
-
-you:  ?
-glass: … xa …</pre>
-    <p>Real output, ANSI stripped. Try it: <code>murmur "words"</code> for one exchange, <code>murmur</code> to sit with the glass.</p>
+    never a walkthrough, never hatches alone. Web toy below uses the same word-pools as the terminal glass, session-only (no memory). Real oracle: <code>murmur</code> in faeOS.</p>
+    <div id="murmur-log" aria-live="polite" style="max-height:16rem;overflow-y:auto"></div>
+    <form id="murmur-form">
+      <input id="murmur-in" type="text" placeholder="speak to the glass…" aria-label="Speak to the glass" autocomplete="off">
+      <button type="submit">offer</button>
+    </form>
   </article>
 </section>
 
@@ -410,5 +405,6 @@ git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;
 <button id="up" hidden>↑ top</button>
 <script src="site.js"></script>
 <script src="assets/scroll.js"></script>
+<script src="assets/murmur.js"></script>
 </body>
 </html>
