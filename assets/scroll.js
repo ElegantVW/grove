@@ -25,8 +25,14 @@
       h += "<p>" + p.runes.map(function (r) { return "<span>" + esc(r.label) + "</span>"; }).join(" · ") + "</p>";
     }
     page.innerHTML = h;
+    page.classList.remove("leaving");
     var hash = "#book/" + p.id;
     if (location.hash !== hash) history.replaceState(null, "", hash);
+  }
+  function show(p) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { render(p); return; }
+    page.classList.add("leaving");
+    setTimeout(function () { render(p); }, 120);
   }
   function fill(filter) {
     var f = (filter || "").toLowerCase();
@@ -45,7 +51,7 @@
     if (i < 0) i = opts.length - 1;
     if (i >= opts.length) i = 0;
     sel.value = opts[i] || "";
-    render(current());
+    show(current());
   }
   fetch("assets/scroll/scroll-pages.json").then(function (r) { return r.json(); }).then(function (data) {
     all = data;
@@ -54,14 +60,14 @@
     if (fromHash && all.some(function (p) { return p.id === fromHash; })) sel.value = fromHash;
     else if (all.some(function (p) { return p.id === "pixie"; })) sel.value = "pixie";
     render(current());
-    sel.addEventListener("change", function () { render(current()); });
+    sel.addEventListener("change", function () { show(current()); });
     prev.addEventListener("click", function () { step(-1); });
     next.addEventListener("click", function () { step(1); });
     q.addEventListener("input", function () {
       var keep = sel.value;
       var list = fill(q.value);
       if (list.some(function (p) { return p.id === keep; })) sel.value = keep;
-      render(current());
+      show(current());
     });
   }).catch(function () {
     page.innerHTML = "<p>Book offline — fetch failed. Read it in the terminal: <code>scroll</code>.</p>";

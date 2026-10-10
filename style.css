@@ -192,6 +192,13 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
 }
 #book button { cursor: pointer; border-color: var(--rose); color: var(--rose); }
 #book h4 { color: var(--gold); margin-bottom: 0.3rem; }
+/* book page swap: soft fade-slide, still with reduced motion */
+#book-page { transition: opacity 0.25s ease, transform 0.25s ease; scroll-margin-top: 4rem; }
+#book-page.leaving { opacity: 0; transform: translateY(8px); }
+@media (prefers-reduced-motion: reduce) {
+  #book-page { transition: none; }
+  #book-page.leaving { opacity: 1; transform: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
