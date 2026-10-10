@@ -164,6 +164,22 @@ figure { margin: 1.6rem 0; }
 figcaption { color: var(--dusk); font-size: 0.9rem; }
 footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
 
+/* sendable resume — same house, no toys */
+.resume-page .splash { min-height: auto; padding: 3rem 1.5rem 1.5rem; }
+.resume-page main { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem 3rem; }
+.resume-page .chapter { opacity: 1; }
+.resume-page ul.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+.resume-page ul.plain li {
+  margin: 0.9rem 0;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 3px solid var(--violet);
+}
+.resume-page .descend { margin: 0.4rem 0.3rem 0; }
+
 /* the clearing — GBA A-button, bottom-left; ↑ stays bottom-right */
 #song {
   position: fixed;

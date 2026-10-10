@@ -2,9 +2,9 @@
 
 # Grove — the pink offline-first house 🌱
 
-Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not an app store — Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the exception. Not for: explicit content.
+Live: `https://elegantvw.github.io/grove/`. Resume (sendable, all-ages): `https://elegantvw.github.io/grove/resume.html`. For: hiring + worlds entry + shelf. Not an app store — Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the exception. Not for: explicit content.
 
-Static front door for the whole column: fire → glass → house → suite.
+Static front door for the whole column: fire → glass → house. Resume at `/resume.html`.
 Opens at the splash, drops you at the fire, climb by scrolling up.
 
 ## Shelf

@@ -5,7 +5,7 @@
   document.documentElement.classList.add("fx");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   // Page reads top-down in stack order: splash, fire, glass, house,
-  // suite, grove, then the cellar. No auto-jump anywhere.
+  // grove, resume, then the cellar. No auto-jump anywhere.
   // Ember-rise chapters as they enter. Threshold is 0 on purpose:
   // ratios are relative to the *element*, and #house is ~13k px tall —
   // it can never reach a fractional threshold on a normal viewport,
