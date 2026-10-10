@@ -2,7 +2,7 @@
 
 # Grove — the pink offline-first house 🌱
 
-Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not an app store — Siren's vessel binaries on the card are the exception. Not for: explicit content.
+Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not an app store — Siren and Goblin vessel binaries on the cards are the exception. Not for: explicit content.
 
 Static front door for the whole column: fire → glass → house → suite.
 Opens at the splash, drops you at the fire, climb by scrolling up.

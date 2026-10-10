@@ -195,7 +195,7 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
 }
 .pay:hover { background: var(--rose); color: var(--night); }
 button.pay { font: inherit; background: transparent; cursor: pointer; }
-/* Siren vessel pills — same house language as .pay, mist for the card */
+/* suite vessel pills — same house language as .pay; tint from --app */
 .dl {
   display: flex;
   flex-wrap: wrap;
