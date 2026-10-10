@@ -10,6 +10,7 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 * 🔥 [Kindling](https://github.com/ElegantVW/fae-kernel) — x86_64 kernel we write
 * 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — host firewall + glass screen lock
 * ✨ [Pixie](https://github.com/ElegantVW/pixie) — offline AI agent on your machine
+* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — thorough seeker, TUI to PDF
 * 🎵 [Siren](https://github.com/ElegantVW/siren) — local music + speaker player
 * ✉️ [Goblin](https://github.com/ElegantVW/goblin) — TLS mail in your terminal
 * 🏮 [Fairy Lantern](https://github.com/ElegantVW/fairy-lantern) — GBA emulator from scratch
@@ -21,7 +22,9 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 
 ## Serve
 
-Any static server (or straight from disk until the domain lands):
+Live (free, no domain): `https://elegantvw.github.io/grove/` via GitHub Pages (Settings → Pages → Deploy from `main` / `/root`).
+
+Local preview:
 
 ```bash
 cd ~/grove && python3 -m http.server 8000
