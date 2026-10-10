@@ -52,6 +52,27 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   onScroll();
+  // The clearing: only this button starts it. Fresh load is hush.
+  var song = document.getElementById("song");
+  var songWord = song && song.querySelector(".song-word");
+  function paintSong() {
+    if (!song) return;
+    var on = window.GroveClearing && window.GroveClearing.isAir();
+    song.setAttribute("aria-pressed", on ? "true" : "false");
+    if (songWord) songWord.textContent = on ? "air" : "hush";
+  }
+  if (song && window.GroveClearing) {
+    song.addEventListener("click", function () {
+      if (window.GroveClearing.isAir()) window.GroveClearing.hush();
+      else window.GroveClearing.start();
+      paintSong();
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (!window.GroveClearing.isAir()) return;
+      if (document.hidden) window.GroveClearing.pause();
+      else window.GroveClearing.resume();
+    });
+  }
   // Clips: pause offscreen, honor reduced motion.
   var clips = Array.prototype.slice.call(document.querySelectorAll("video.clip"));
   if (reduceMotion) {

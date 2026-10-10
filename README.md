@@ -2,7 +2,7 @@
 
 # Grove — the pink offline-first house 🌱
 
-Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not an app store — Siren and Goblin vessel binaries on the cards are the exception. Not for: explicit content.
+Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not an app store — Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the exception. Not for: explicit content.
 
 Static front door for the whole column: fire → glass → house → suite.
 Opens at the splash, drops you at the fire, climb by scrolling up.
@@ -12,9 +12,9 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 * 🔥 [Kindling](https://github.com/ElegantVW/fae-kernel) — x86_64 firmware + kernel; house light on
 * 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — host firewall + glass screen lock
 * ✨ [Pixie](https://github.com/ElegantVW/pixie) — offline AI agent on your machine
-* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — thorough seeker, crawl to cited PDF
-* 🎵 [Siren](https://github.com/ElegantVW/siren) — local music + speaker player
-* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — TLS mail in your terminal
+* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — nest-egg, cited manuals
+* 🎵 [Siren](https://github.com/ElegantVW/siren) — sea-glass, local music
+* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — letter-pouch, TLS mail
 * 🏮 [Fairy Lantern](https://github.com/ElegantVW/fairy-lantern) — GBA emulator from scratch
 * 🏔️ [Mourama](https://github.com/ElegantVW/mourama) — Iberian hillfort strategy game
 * 🐉 [Kur](https://github.com/ElegantVW/kur) — answers only in haiku
@@ -33,6 +33,7 @@ cd ~/grove && python3 -m http.server 8000
 ```
 
 No build, no JS framework, no telemetry. Palette: `fae-kernel/docs/identity/IDENTITY.md`.
+Optional air: *the clearing* (GBA-shaped loop). Off until you tap **♪ hush**. Never autoplay; a reload is hush again.
 
 ## License
 
