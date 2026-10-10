@@ -9,9 +9,10 @@ Live hub: `https://elegantvw.github.io/grove/`
 Bio: `Serpent. Offline house builder. Teasers + process. Hire: link below.`
 Link: hub URL. Pins: 1) desk+terminal photo 2) pixie answering clip 3) kur haiku.
 
-## Instagram @elegantvideoworlds (studio / SFW teasers only)
-Bio: `Elegant Video Worlds. Blending nostalgia with elegance. SFW teasers. Full 18+ via link.`
-Link: hub URL. Pins: 1) EVW-002 SFW crop 7s 2) EVW-006 SFW crop 7s 3) behind-edit desk shot.
+## Instagram @elegantvideoworlds (studio, suggestive 18+)
+Bio must read `18+ only` (a quarter of current followers are minors — gate DMs).
+Link: hub URL. Catalog: 14 items, EVW-numbered (000/009/013/101/127/155/266/311/336/400/401/826/994), Elara model, Red Horse narrative pair, trident/VHS branding, DM-for-info CTAs.
+Pins: 1) EVW-000 (launch) 2) EVW-401/400 Red Horse pair 3) EVW-009 horsemen (strongest single image).
 
 ## Threads @evenweak3r
 EN + PT, process notes. Every post ends with one next step (repo link or hire link), never `website TBH` alone.
