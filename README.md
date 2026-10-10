@@ -12,9 +12,9 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 * 🔥 [Kindling](https://github.com/ElegantVW/fae-kernel) — x86_64 firmware + kernel; house light on
 * 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — host firewall + glass screen lock
 * ✨ [Pixie](https://github.com/ElegantVW/pixie) — offline AI agent on your machine
-* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — nest-egg, cited manuals
-* 🎵 [Siren](https://github.com/ElegantVW/siren) — sea-glass, local music
-* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — letter-pouch, TLS mail
+* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — thorough seeker, crawl to cited PDF
+* 🎵 [Siren](https://github.com/ElegantVW/siren) — local music + speaker player
+* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — TLS mail in your terminal
 * 🏮 [Fairy Lantern](https://github.com/ElegantVW/fairy-lantern) — GBA emulator from scratch
 * 🏔️ [Mourama](https://github.com/ElegantVW/mourama) — Iberian hillfort strategy game
 * 🐉 [Kur](https://github.com/ElegantVW/kur) — answers only in haiku

@@ -301,7 +301,10 @@
 
   function schedule() {
     if (!wantAir || !ctx) return;
-    if (ctx.state === "suspended") return;
+    if (ctx.state === "suspended") {
+      timer = root.setTimeout(schedule, 50);
+      return;
+    }
     var now = ctx.currentTime;
     var dt = sixteenth();
     var horizon = now + LOOK;
@@ -322,12 +325,17 @@
     ensure();
     if (!ctx) return false;
     wantAir = true;
-    ctx.resume();
     cut();
-    origin = ctx.currentTime + 0.05;
-    cursor = 0;
-    if (timer) root.clearTimeout(timer);
-    schedule();
+    function go() {
+      if (!wantAir || !ctx) return;
+      origin = ctx.currentTime + 0.05;
+      cursor = 0;
+      if (timer) root.clearTimeout(timer);
+      schedule();
+    }
+    var p = ctx.resume();
+    if (p && p.then) p.then(go);
+    else go();
     return true;
   }
 
@@ -352,9 +360,15 @@
 
   function resume() {
     if (!wantAir || !ctx) return;
-    ctx.resume();
-    origin = ctx.currentTime - cursor * sixteenth();
-    schedule();
+    function go() {
+      if (!wantAir || !ctx) return;
+      origin = ctx.currentTime - cursor * sixteenth();
+      if (timer) root.clearTimeout(timer);
+      schedule();
+    }
+    var p = ctx.resume();
+    if (p && p.then) p.then(go);
+    else go();
   }
 
   root.GroveClearing = {
