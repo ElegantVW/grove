@@ -179,6 +179,52 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
   border-left: 3px solid var(--violet);
 }
 .resume-page .descend { margin: 0.4rem 0.3rem 0; }
+.resume-page .jobs li strong { color: var(--lilac); }
+
+/* grove → hire: ember line, gold wash, card stagger */
+#hire {
+  border-top: none;
+  scroll-margin-top: 3.5rem;
+  position: relative;
+}
+#hire::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: min(16rem, 70%);
+  margin: 0 auto 2.4rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--rose) 22%, var(--gold) 50%, var(--rose) 78%, transparent);
+}
+html.fx #hire.risen {
+  background: radial-gradient(ellipse at 50% 0%, rgba(240, 216, 160, 0.12), transparent 68%);
+}
+html.fx #hire.risen .app {
+  animation: hire-in 0.55s ease both;
+}
+html.fx #hire.risen .app:nth-of-type(1) { animation-delay: 0.06s; }
+html.fx #hire.risen .app:nth-of-type(2) { animation-delay: 0.14s; }
+html.fx #hire.risen .app:nth-of-type(3) { animation-delay: 0.22s; }
+html.fx #hire.risen .app:nth-of-type(4) { animation-delay: 0.30s; }
+html.fx #hire.risen .app:nth-of-type(5) { animation-delay: 0.38s; }
+@keyframes hire-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.worlds-poster {
+  margin: 1.4rem auto;
+  max-width: 22rem;
+  text-align: center;
+}
+.worlds-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--shadow);
+  border-top: 2px solid var(--lilac);
+}
 
 /* the clearing — GBA A-button, bottom-left; ↑ stays bottom-right */
 #song {
@@ -336,6 +382,8 @@ button.pay { font: inherit; background: transparent; cursor: pointer; }
   html.fx .chapter { opacity: 1; transform: none; transition: none; }
   html.fx main .chapter h2::before, html.fx main .chapter h2::after { animation: none; opacity: 0; }
   .dl-btn { transition: none; }
+  html.fx #hire { background: none; }
+  html.fx #hire .app { opacity: 1; transform: none; animation: none; }
 }
 /* glitch titles — same language as the story clips, zero downloads */
 main .chapter h2 {
