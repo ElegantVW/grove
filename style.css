@@ -195,6 +195,36 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
 }
 .pay:hover { background: var(--rose); color: var(--night); }
 button.pay { font: inherit; background: transparent; cursor: pointer; }
+/* Siren vessel pills — same house language as .pay, mist for the card */
+.dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.7rem 0 0;
+}
+.dl-btn {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--app, var(--mist));
+  border-radius: 999px;
+  color: var(--app, var(--mist));
+  background: transparent;
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.dl-btn:hover { background: var(--app, var(--mist)); color: var(--night); }
+.dl-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.dl-btn.quiet {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+.dl-btn.quiet:hover { background: var(--rose); color: var(--night); }
 /* hire dialog: native popup, house colors */
 #hire-dialog { background: var(--night); color: var(--parchment); border: 1px solid var(--rose); border-radius: 12px; padding: 1.2rem; max-width: min(480px, 92vw); }
 #hire-dialog input, #hire-dialog select, #hire-dialog textarea { display: block; width: 100%; background: #241a22; color: var(--parchment); border: 1px solid var(--shadow); border-radius: 8px; padding: 0.45rem 0.6rem; font: inherit; margin-top: 0.2rem; }
@@ -236,6 +266,7 @@ button.pay { font: inherit; background: transparent; cursor: pointer; }
   html { scroll-behavior: auto; }
   html.fx .chapter { opacity: 1; transform: none; transition: none; }
   html.fx main .chapter h2::before, html.fx main .chapter h2::after { animation: none; opacity: 0; }
+  .dl-btn { transition: none; }
 }
 /* glitch titles — same language as the story clips, zero downloads */
 main .chapter h2 {
