@@ -2,6 +2,8 @@
 
 # Grove — the pink offline-first house 🌱
 
+Live: `https://elegantvw.github.io/grove/`. For: hiring + worlds entry + shelf. Not for: app downloads, explicit content.
+
 Static front door for the whole column: fire → glass → house → suite.
 Opens at the splash, drops you at the fire, climb by scrolling up.
 
