@@ -62,7 +62,7 @@
 / | \
   |  
  / \ 
-/   \</pre><strong>Kindling</strong><span>x86_64 kernel we write</span></a>
+/   \</pre><strong>Kindling</strong><span>x86_64 firmware + kernel; house light on</span></a>
     <a class="tile" style="--app:#F0D8A0" href="#app-bulwark"><pre class="sigil" aria-hidden="true">_|_|_|_
 |_____|
 _|_|_|_
@@ -137,8 +137,11 @@ _|_|_|_
  / \ 
 /   \</pre>
   
-  <p>x86_64 firmware + kernel we write. Phase 1 green (own page tables, cup-stack);
-  phase 2 shut. Missing syscalls return ENOSYS — silent success is a lie.
+  <p>x86_64 firmware + kernel we write. Phase 1 (own page tables, cup-stack) is green.
+  House light is on: a hall of keepers, Gleam sparks on our own calls (not Linux),
+  Grove on the right of the glass, a tiny pane after the fire.
+  A missing call returns ENOSYS — silent success is a lie.
+  Linux ELF and <code>grant</code> stay later.
   <a href="https://github.com/ElegantVW/fae-kernel">repo</a></p>
   </article>
 </section>

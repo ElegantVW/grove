@@ -9,7 +9,7 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 
 ## Shelf
 
-* 🔥 [Kindling](https://github.com/ElegantVW/fae-kernel) — x86_64 kernel we write
+* 🔥 [Kindling](https://github.com/ElegantVW/fae-kernel) — x86_64 firmware + kernel; house light on
 * 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — host firewall + glass screen lock
 * ✨ [Pixie](https://github.com/ElegantVW/pixie) — offline AI agent on your machine
 * 🔎 [Magpie](https://github.com/ElegantVW/magpie) — thorough seeker, crawl to cited PDF
