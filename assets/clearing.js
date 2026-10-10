@@ -305,7 +305,7 @@
     ctx = new AC();
     master = ctx.createGain();
     var coarse = root.matchMedia && root.matchMedia("(pointer: coarse)").matches;
-    master.gain.value = coarse ? 0.04 : 0.065;
+    master.gain.value = coarse ? 0.16 : 0.24;
     master.connect(ctx.destination);
     pulse12 = pulseWave(0.125);
     pulse50 = pulseWave(0.5);
