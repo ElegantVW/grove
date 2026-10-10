@@ -43,6 +43,7 @@
   <a href="#glass" data-layer="glass">Glass</a>
   <a href="#house" data-layer="house">House</a>
   <a href="#suite" data-layer="suite">Suite</a>
+  <a href="#book" data-layer="book">Book</a>
   <a href="#grove" data-layer="grove">Grove</a>
   <a href="#hire" data-layer="hire">Hire</a>
   <a href="#worlds" data-layer="worlds">Worlds</a>
@@ -293,6 +294,18 @@ _|_|_|_
   <p><a href="https://github.com/ElegantVW/faeOS">ElegantVW/faeOS</a></p>
 </section>
 
+<section class="chapter" id="book">
+  <h2>The book — try Scroll</h2>
+  <p>Same pages as the terminal book, read-only. Full text lives in <code>scroll</code>; PATH leaf stays terminal-only.</p>
+  <p>
+    <input id="book-q" type="search" placeholder="filter pages…" aria-label="Filter Scroll pages">
+    <select id="book-sel" aria-label="Scroll page"></select>
+    <button id="book-prev" type="button">← prev</button>
+    <button id="book-next" type="button">next →</button>
+  </p>
+  <article class="app" id="book-page" style="--app:#E0C090" aria-live="polite"></article>
+</section>
+
 <section class="chapter" id="grove">
   <h2>The canopy — Grove</h2>
   <p>One person, one office box, one column of software. Everything here runs
@@ -382,5 +395,6 @@ git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;
 <a href="https://github.com/ElegantVW">ElegantVW</a>. Live free at <a href="https://elegantvw.github.io/grove/">elegantvw.github.io/grove</a>. Contact <a href="mailto:evenweaker@disroot.org">evenweaker@disroot.org</a>. No telemetry, no accounts, no blobs you cannot rebuild.</p></footer>
 <button id="up" hidden>↑ top</button>
 <script src="site.js"></script>
+<script src="assets/scroll.js"></script>
 </body>
 </html>

@@ -179,6 +179,19 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
   font-size: 1rem;
 }
 #up:hover { background: var(--shadow); }
+/* book reader: terminal text, native controls */
+#book input, #book select, #book button {
+  background: var(--night);
+  color: var(--parchment);
+  border: 1px solid var(--shadow);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+  font-size: 0.95rem;
+  margin: 0.15rem;
+}
+#book button { cursor: pointer; border-color: var(--rose); color: var(--rose); }
+#book h4 { color: var(--gold); margin-bottom: 0.3rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
