@@ -182,6 +182,18 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
 /* proof offer: own thing, gold, first in hire */
 #proof { border-width: 2px; background: rgba(240, 216, 160, 0.07); }
 #proof h3 { margin-top: 0; font-size: 1.5rem; }
+/* pay buttons: house rose pills, no Stripe blue anywhere */
+.pay {
+  display: inline-block;
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--rose);
+  border-radius: 999px;
+  color: var(--rose);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.pay:hover { background: var(--rose); color: var(--night); }
 /* book reader: terminal text, native controls */
 #book input, #book select, #book button {
   background: var(--night);
