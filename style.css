@@ -53,7 +53,9 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
   text-align: center;
   padding: 2rem;
 }
-.splash .hero { max-width: min(720px, 92vw); height: auto; }
+.hero-sigil { font-size: 1.6rem; margin: 0 0 0.5rem; }
+.hero-title { font-size: 3rem; margin: 0; color: var(--parchment); letter-spacing: -0.02em; }
+.hero-sub { color: var(--dusk); margin: 0.2rem 0 0; }
 .tag { color: var(--dusk); font-size: 1.25rem; }
 .descend {
   display: inline-block;
@@ -120,15 +122,17 @@ html.fx .chapter.risen { opacity: 1; transform: none; }
   border-top: 2px solid var(--app, var(--lilac));
   border-radius: 10px;
   text-decoration: none;
+  min-height: 150px;
 }
 .tile img { width: 100%; height: auto; border-radius: 6px; }
 .tile strong { color: var(--app, var(--parchment)); font-size: 1rem; }
-.tile span { color: var(--dusk); font-size: 0.8rem; line-height: 1.4; }
+.tile span { color: var(--dusk); font-size: 0.8rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .tile:hover { border-color: var(--app, var(--rose)); }
 .shot {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--shadow);
   margin: 1rem 0;
@@ -136,7 +140,8 @@ html.fx .chapter.risen { opacity: 1; transform: none; }
 .clip {
   display: block;
   width: min(240px, 60vw);
-  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--shadow);
   margin: 1rem 0;
