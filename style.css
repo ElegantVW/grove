@@ -194,6 +194,10 @@ footer { text-align: center; padding: 3rem 1rem; color: var(--dusk); }
   white-space: nowrap;
 }
 .pay:hover { background: var(--rose); color: var(--night); }
+button.pay { font: inherit; background: transparent; cursor: pointer; }
+/* hire dialog: native popup, house colors */
+#hire-dialog { background: var(--night); color: var(--parchment); border: 1px solid var(--rose); border-radius: 12px; padding: 1.2rem; max-width: min(480px, 92vw); }
+#hire-dialog input, #hire-dialog select, #hire-dialog textarea { display: block; width: 100%; background: #241a22; color: var(--parchment); border: 1px solid var(--shadow); border-radius: 8px; padding: 0.45rem 0.6rem; font: inherit; margin-top: 0.2rem; }
 /* book reader: terminal text, native controls */
 #book input, #book select, #book button {
   background: var(--night);

@@ -348,21 +348,35 @@ _|_|_|_
   </article>
   <article class="app" style="--app:#E8A0B4">
     <h3>Vertical teaser edit — €37</h3>
-    <p>SFW, 30–60s from your clips + song. 7 days. <a class="pay" href="https://buy.stripe.com/fZu00ieJC37U31dh1vfQI00">Pay €37</a> or mail to book.</p>
+    <p>SFW, 30–60s from your clips + song. 7 days. <a class="pay" href="https://buy.stripe.com/fZu00ieJC37U31dh1vfQI00">Pay €37</a> · <button class="pay" type="button" data-hire="teaser">Request</button></p>
   </article>
   <article class="app" style="--app:#B08CC8">
     <h3>Custom PMV (18+) — €75</h3>
-    <p>2–3min curated edit. 14 days. Brief + references required. Delivered via your PMVHaven / drive. 18+ only.</p>
+    <p>2–3min curated edit. 14 days. Brief + references required. Delivered via your PMVHaven / drive. 18+ only. <button class="pay" type="button" data-hire="pmv">Request</button></p>
   </article>
   <article class="app" style="--app:#8EC4C8">
     <h3>Linux offline setup — €88</h3>
-    <p>Arch + faeOS suite / mail / music / firewall on one machine, remote SSH. Includes 1 fix week. You provide hardware + passwords live, nothing stored.</p>
+    <p>Arch + faeOS suite / mail / music / firewall on one machine, remote SSH. Includes 1 fix week. You provide hardware + passwords live, nothing stored. <button class="pay" type="button" data-hire="setup">Request</button></p>
   </article>
   <article class="app" style="--app:#F0D8A0">
     <h3>Small Rust / Python fix — €26/hr, 1hr min</h3>
-    <p>TUI / CLI / script bug with estimate upfront. No security sign-off, no nation-state claims — see Law.</p>
+    <p>TUI / CLI / script bug with estimate upfront. No security sign-off, no nation-state claims — see Law. <button class="pay" type="button" data-hire="fix">Request</button></p>
   </article>
   <p>How to book: subject <code>hire: [teaser|pmv|setup|fix]</code>, 5 lines max — what, links, deadline, budget. I reply in 48h or I pass.</p>
+  <dialog id="hire-dialog" aria-label="Request a service">
+    <form id="hire-form" method="dialog">
+      <h3 id="hire-title">Request</h3>
+      <p><label>Service <select id="hire-service" name="service"><option>teaser</option><option>pmv</option><option>setup</option><option>fix</option></select></label></p>
+      <p><label>Your name <input id="hire-name" name="name" required autocomplete="name"></label></p>
+      <p><label>Contact back at <input id="hire-contact" name="contact" required placeholder="email or handle" autocomplete="email"></label></p>
+      <p><label>Links <input id="hire-links" name="links" placeholder="clips, repo, references"></label></p>
+      <p><label>Deadline <input id="hire-deadline" name="deadline" placeholder="e.g. 2026-11-01"></label></p>
+      <p><label>Budget <input id="hire-budget" name="budget" placeholder="e.g. €37"></label></p>
+      <p><label>What <textarea id="hire-what" name="what" rows="3" maxlength="500" placeholder="5 lines max"></textarea></label></p>
+      <p><button type="submit" class="pay">Compose mail</button> <button type="button" id="hire-close">Close</button></p>
+      <p class="law">Opens your mail app addressed to me with everything filled in. No account, nothing stored here.</p>
+    </form>
+  </dialog>
 </section>
 
 <section class="chapter" id="worlds">
@@ -437,5 +451,6 @@ git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;
 <script src="site.js"></script>
 <script src="assets/scroll.js"></script>
 <script src="assets/murmur.js"></script>
+<script src="assets/hire.js"></script>
 </body>
 </html>
