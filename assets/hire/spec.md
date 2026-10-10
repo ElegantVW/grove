@@ -1,4 +1,8 @@
-# Hire request spec (v1, mailto)
+# Hire request spec (v2, direct delivery)
+
+Delivery: form POSTs to our inbox via relay (no sender mailbox needed on the client).
+Fallback: mailto with identical subject/body. Either way Goblin filters on the subject below.
+Relay activation: first submit triggers a confirm mail to us — click once, then it flows.
 
 ## Subject (rigid, Goblin filters on this)
 
