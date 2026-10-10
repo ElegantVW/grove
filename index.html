@@ -110,7 +110,10 @@ _|_|_|_
     <a class="tile" style="--app:#E0C090" href="https://github.com/ElegantVW/scroll"><pre class="sigil" aria-hidden="true"> ___
 |---|
 |---|
-|___|</pre><strong>Scroll</strong><span>living book + PATH leaf</span></a>
+|___|</pre><strong>Scroll</strong><span>living book — try it below</span></a>
+    <a class="tile" style="--app:#8FBF9A" href="#house"><pre class="sigil" aria-hidden="true"> ~~~
+( ~~~ )
+ ~~~</pre><strong>Murmur</strong><span>babbling glass quest — planned</span></a>
     <a class="tile" style="--app:#B08CC8" href="https://github.com/ElegantVW/faeOS"><pre class="sigil" aria-hidden="true">\  |  /
  \| |/ 
 ---+---
@@ -266,16 +269,30 @@ _|_|_|_
     <p>Terminal art from a wish — then mocked by a grumpy dragon.
     <a href="https://github.com/ElegantVW/imp">repo</a></p>
   </article>
-  <article class="app" style="--app:#E0C090">
+  <article class="app" id="book" style="--app:#E0C090">
     <pre class="sigil" aria-hidden="true"> ___
 |---|
 |---|
 |___|</pre>
     <h3>Scroll — living book 📜</h3>
-    <video class="clip" src="assets/story/scroll.mp4" poster="assets/story/scroll.png" muted loop playsinline autoplay preload="metadata"></video>
-    <img class="shot" src="assets/screenshots/scroll-summon.png" alt="scroll summon" loading="lazy">
     <p>One page per app, Tab teaches faeOS; the last leaf opens PATH.
+    Try it here — same pages as the terminal book, read-only.
     <a href="https://github.com/ElegantVW/scroll">repo</a></p>
+    <p>
+      <input id="book-q" type="search" placeholder="filter pages…" aria-label="Filter Scroll pages">
+      <select id="book-sel" aria-label="Scroll page"></select>
+      <button id="book-prev" type="button">← prev</button>
+      <button id="book-next" type="button">next →</button>
+    </p>
+    <article class="app" id="book-page" style="--app:#E0C090" aria-live="polite"></article>
+  </article>
+  <article class="app" style="--app:#8FBF9A">
+    <pre class="sigil" aria-hidden="true"> ~~~
+( ~~~ )
+ ~~~</pre>
+    <h3>Murmur — babbling glass (quest, planned)</h3>
+    <p>Moonring-style oracle for the egg quest. Mostly gibberish, rare clear shards —
+    never a walkthrough, never hatches alone. No repo yet; design lives in faeOS plans.</p>
   </article>
 </section>
 
@@ -294,18 +311,6 @@ _|_|_|_
   <p><a href="https://github.com/ElegantVW/faeOS">ElegantVW/faeOS</a></p>
 </section>
 
-<section class="chapter" id="book">
-  <h2>The book — try Scroll</h2>
-  <p>Same pages as the terminal book, read-only. Full text lives in <code>scroll</code>; PATH leaf stays terminal-only.</p>
-  <p>
-    <input id="book-q" type="search" placeholder="filter pages…" aria-label="Filter Scroll pages">
-    <select id="book-sel" aria-label="Scroll page"></select>
-    <button id="book-prev" type="button">← prev</button>
-    <button id="book-next" type="button">next →</button>
-  </p>
-  <article class="app" id="book-page" style="--app:#E0C090" aria-live="polite"></article>
-</section>
-
 <section class="chapter" id="grove">
   <h2>The canopy — Grove</h2>
   <p>One person, one office box, one column of software. Everything here runs
@@ -316,7 +321,6 @@ _|_|_|_
   today's fast house on Arch.</p>
   <p>Evenweaker / ElegantVW — <a href="https://github.com/ElegantVW">code</a> ·
   <a href="https://www.instagram.com/evenweak3r">personal</a> ·
-  <a href="https://www.instagram.com/elegantvideoworlds">studio</a> ·
   <a href="https://www.instagram.com/elegantvideoworlds">studio</a> ·
   <a href="mailto:evenweaker@disroot.org">all contact via email</a></p>
 </section>
