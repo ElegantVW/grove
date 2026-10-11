@@ -111,33 +111,55 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
   text-decoration: none;
 }
 
-/* sticky index — floating island of chips */
+/* sticky index — floating island of chips, one row */
 .index {
   position: sticky;
   top: 0.55rem;
   z-index: 10;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 0.15rem;
-  justify-content: center;
-  width: calc(100% - 1.4rem);
-  max-width: 52rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.12rem;
+  justify-content: flex-start;
+  position: relative;
+  width: max-content;
+  max-width: calc(100% - 1.4rem);
   margin: 0 auto 0.4rem;
-  padding: 0.35rem 0.45rem;
+  padding: 0.32rem 0.4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
   background: rgba(26, 18, 24, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--shadow);
   border-radius: 1.4rem;
   box-shadow: 0 8px 28px rgba(11, 8, 11, 0.35);
+  -webkit-overflow-scrolling: touch;
+}
+.index::-webkit-scrollbar { display: none; }
+.index-lamp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 999px;
+  background: rgba(240, 216, 160, 0.16);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: transform 0.38s ease, width 0.38s ease, height 0.38s ease, opacity 0.2s ease;
 }
 .index a {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
   text-decoration: none;
   color: var(--mist);
-  font-size: 0.88rem;
-  padding: 0.28rem 0.72rem;
+  font-size: 0.86rem;
+  padding: 0.28rem 0.7rem;
   border-radius: 999px;
   line-height: 1.4;
+  transition: color 0.28s ease, background 0.28s ease;
 }
 .index a:hover,
 .index a:focus-visible {
@@ -146,7 +168,7 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
 }
 .index a.active {
   color: var(--gold);
-  background: rgba(240, 216, 160, 0.16);
+  background: transparent;
   text-decoration: none;
 }
 
@@ -591,7 +613,7 @@ button.pay { font: inherit; background: transparent; cursor: pointer; }
 #murmur-form button { cursor: pointer; border-color: var(--rose); color: var(--rose); }
 #book h4 { color: var(--gold); margin-bottom: 0.3rem; }
 /* book page swap: soft fade-slide, still with reduced motion */
-#book-page { transition: opacity 0.25s ease, transform 0.25s ease; scroll-margin-top: 4rem; }
+#book-page { transition: opacity 0.25s ease, transform 0.25s ease; scroll-margin-top: 4.4rem; }
 #book-page.leaving { opacity: 0; transform: translateY(8px); }
 @media (prefers-reduced-motion: reduce) {
   #book-page { transition: none; }
@@ -612,6 +634,8 @@ button.pay { font: inherit; background: transparent; cursor: pointer; }
   html.entering.entered body { opacity: 1; transform: none; transition: none; }
   .shorts { scroll-behavior: auto; }
   .index { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(26, 18, 24, 0.94); }
+  .index a { transition: none; }
+  .index-lamp { transition: none; }
 }
 /* glitch titles — same language as the story clips, zero downloads */
 main .chapter h2 {
