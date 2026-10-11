@@ -9,18 +9,18 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 
 ## Shelf
 
-* 🔥 [Kindling](https://github.com/ElegantVW/kindling) — starts the machine and lights the house
-* 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — guards the computer and locks the screen
-* ✨ [Pixie](https://github.com/ElegantVW/pixie) — a helper on your computer, no cloud
-* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — reads the web and writes a sourced manual
-* 🎵 [Siren](https://github.com/ElegantVW/siren) — plays your music here and on the speakers
-* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — mail in the terminal, kept private
-* 🏮 [Fairy Lantern](https://github.com/ElegantVW/fairy-lantern) — plays Game Boy Advance games (we built the player)
-* 🏔️ [Mourama](https://github.com/ElegantVW/mourama) — a hillfort strategy game — not playable yet
-* 🐉 [Kur](https://github.com/ElegantVW/kur) — answers only in haiku
-* 🐲 [Imp](https://github.com/ElegantVW/imp) — draws terminal art from a wish
-* 📜 [Scroll](https://github.com/ElegantVW/scroll) — the house book — try it below
-* 🌸 [faeOS](https://github.com/ElegantVW/faeOS) — the pink house that runs without the internet
+* 🔥 [Kindling](https://github.com/ElegantVW/kindling) — first light
+* 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — lock and guard
+* ✨ [Pixie](https://github.com/ElegantVW/pixie) — helper, no cloud
+* 🔎 [Magpie](https://github.com/ElegantVW/magpie) — sourced manuals
+* 🎵 [Siren](https://github.com/ElegantVW/siren) — plays your music
+* ✉️ [Goblin](https://github.com/ElegantVW/goblin) — private mail
+* 🏮 [Fairy Lantern](https://github.com/ElegantVW/fairy-lantern) — Game Boy Advance
+* 🏔️ [Mourama](https://github.com/ElegantVW/mourama) — hillfort game
+* 🐉 [Kur](https://github.com/ElegantVW/kur) — haiku only
+* 🐲 [Imp](https://github.com/ElegantVW/imp) — art from a wish
+* 📜 [Scroll](https://github.com/ElegantVW/scroll) — house book
+* 🌸 [faeOS](https://github.com/ElegantVW/faeOS) — pink house, offline
 
 ## Serve
 

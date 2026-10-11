@@ -22,7 +22,7 @@
     log.appendChild(p);
     log.scrollTop = log.scrollHeight;
   }
-  function moodLine() { if (title) title.textContent = "murmur ✦ babbling glass · " + S.mood + (S.turns ? " · " + S.turns : ""); }
+  function moodLine() { /* keep the card h3; mood stays internal */ }
   function isSilence(t) {
     if (!t.trim()) return true;
     if (!toks(t).length && /^[?.!…·. ]*$/.test(t)) return true;
