@@ -49,7 +49,11 @@ html.entering.to-glade body { transform: translateX(16%); }
 html.entering.to-resume body { transform: translateY(14%); }
 html.entering.to-grove.from-glade body { transform: translateX(-16%); }
 html.entering.to-grove.from-resume body { transform: translateY(-14%); }
-html.entering.entered body {
+html.entering.entered body,
+html.entering.entered.to-glade body,
+html.entering.entered.to-resume body,
+html.entering.entered.to-grove.from-glade body,
+html.entering.entered.to-grove.from-resume body {
   opacity: 1;
   transform: none;
   transition: opacity 0.52s ease, transform 0.52s ease;

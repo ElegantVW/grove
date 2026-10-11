@@ -25,23 +25,24 @@
 
   function startAir() {
     wantAir = true;
-    if (air) {
-      air.muted = false;
-      if (mostlyVisible(air)) air.play().catch(function () {});
-    }
+    reels.forEach(function (v) {
+      if (mostlyVisible(v)) {
+        v.muted = false;
+        v.play().catch(function () {});
+      }
+    });
     paintSong();
   }
 
   function hushAir() {
     wantAir = false;
-    if (air) air.muted = true;
+    reels.forEach(function (v) { v.muted = true; });
     paintSong();
   }
 
   function playVisible(v) {
     if (!v || reduce) return;
-    if (v === air) v.muted = !wantAir;
-    else v.muted = true;
+    v.muted = !wantAir;
     v.play().catch(function () {});
   }
 
@@ -49,9 +50,11 @@
     start: startAir,
     hush: hushAir,
     isAir: function () { return wantAir; },
-    pause: function () { if (air) air.pause(); },
+    pause: function () { reels.forEach(function (v) { v.pause(); }); },
     resume: function () {
-      if (wantAir && air && mostlyVisible(air)) air.play().catch(function () {});
+      reels.forEach(function (v) {
+        if (wantAir && mostlyVisible(v)) playVisible(v);
+      });
     }
   };
 
@@ -69,8 +72,12 @@
     var fig = v.closest(".reel");
     var btn = fig && fig.querySelector(".reel-play");
     function toggle() {
-      if (v.paused) playVisible(v);
-      else v.pause();
+      if (v.paused) {
+        if (!wantAir) startAir();
+        else playVisible(v);
+      } else {
+        v.pause();
+      }
     }
     if (btn) btn.addEventListener("click", function (e) {
       e.stopPropagation();

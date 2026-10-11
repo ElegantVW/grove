@@ -50,11 +50,26 @@
     var from = here();
     var to = roomOf(new URL(dest, location.href).pathname);
     if (from === to) return;
+    try { history.scrollRestoration = "manual"; } catch (err) {}
     setTypes(e.viewTransition, from, to);
   });
 
+  function stripCross() {
+    html.classList.remove(
+      "leaving", "entering", "entered",
+      "to-glade", "to-resume", "to-grove",
+      "from-glade", "from-resume", "from-grove"
+    );
+  }
+
+  function land() {
+    var h = location.hash;
+    if (!h || h === "#" || h === "#top") window.scrollTo(0, 0);
+  }
+
   window.addEventListener("pagereveal", function (e) {
-    html.classList.remove("leaving", "entering", "entered", "to-glade", "to-resume", "to-grove", "from-glade", "from-resume", "from-grove");
+    stripCross();
+    land();
     if (!e.viewTransition) return;
     var fromUrl = e.activation && e.activation.from && e.activation.from.url;
     if (!fromUrl) return;
@@ -64,8 +79,9 @@
     setTypes(e.viewTransition, from, to);
   });
 
-  window.addEventListener("pageshow", function () {
+  window.addEventListener("pageshow", function (e) {
     html.classList.remove("leaving");
+    if (e.persisted) stripCross();
   });
 
   if (!reduce) {
@@ -75,9 +91,11 @@
         sessionStorage.removeItem(ENTER_KEY);
         var bits = enter.split(":");
         html.classList.add("entering", "to-" + bits[0], "from-" + bits[1]);
+        land();
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             html.classList.add("entered");
+            setTimeout(stripCross, 560);
           });
         });
       }
@@ -90,13 +108,18 @@
     var a = e.target.closest && e.target.closest("a[href]");
     if (!isCross(a)) return;
     if (reduce) return;
-    if (canMpa) return;
+    if (canMpa) {
+      try { history.scrollRestoration = "manual"; } catch (err) {}
+      return;
+    }
     e.preventDefault();
     var to = destRoom(a);
     var from = here();
     html.classList.add("leaving", "to-" + to, "from-" + from);
-    try { sessionStorage.setItem(ENTER_KEY, to + ":" + from); }
-    catch (err) {}
+    try {
+      sessionStorage.setItem(ENTER_KEY, to + ":" + from);
+      history.scrollRestoration = "manual";
+    } catch (err) {}
     var url = a.href;
     setTimeout(function () { location.href = url; }, 520);
   });

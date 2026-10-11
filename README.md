@@ -33,7 +33,7 @@ cd ~/grove && python3 -m http.server 8000
 ```
 
 No build, no JS framework, no telemetry. Palette: `fae-kernel/docs/identity/IDENTITY.md`.
-Optional air: EVW-994 on the glade page. Off until you tap **♪ hush**. A reload is hush again.
+Optional air: the visible reel on the glade, with its own sound. Off until you tap **♪ hush** or the reel. A reload is hush again.
 
 ## License
 
