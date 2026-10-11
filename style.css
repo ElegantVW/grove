@@ -116,28 +116,30 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
   position: sticky;
   top: 0.55rem;
   z-index: 10;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0.12rem;
-  justify-content: flex-start;
-  position: relative;
   width: max-content;
   max-width: calc(100% - 1.4rem);
   margin: 0 auto 0.4rem;
-  padding: 0.32rem 0.4rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
   background: rgba(26, 18, 24, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--shadow);
   border-radius: 1.4rem;
   box-shadow: 0 8px 28px rgba(11, 8, 11, 0.35);
+}
+.index-track {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.12rem;
+  justify-content: flex-start;
+  padding: 0.32rem 0.4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
-.index::-webkit-scrollbar { display: none; }
+.index-track::-webkit-scrollbar { display: none; }
 .index-lamp {
   position: absolute;
   left: 0;

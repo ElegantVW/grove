@@ -30,18 +30,19 @@
   }, 2000);
   // Index highlight + sliding lamp.
   var indexBar = document.querySelector(".index");
+  var track = document.querySelector(".index-track") || indexBar;
   var links = Array.prototype.slice.call(document.querySelectorAll(".index a"));
   var byId = {};
   links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
   var lamp = null;
-  if (indexBar) {
+  if (track) {
     lamp = document.createElement("span");
     lamp.className = "index-lamp";
     lamp.setAttribute("aria-hidden", "true");
-    indexBar.insertBefore(lamp, indexBar.firstChild);
+    track.insertBefore(lamp, track.firstChild);
   }
   function placeLamp(a) {
-    if (!lamp || !indexBar) return;
+    if (!lamp || !track) return;
     if (!a) {
       lamp.style.opacity = "0";
       return;
@@ -50,8 +51,15 @@
     lamp.style.width = a.offsetWidth + "px";
     lamp.style.height = a.offsetHeight + "px";
     lamp.style.transform = "translate(" + a.offsetLeft + "px, " + a.offsetTop + "px)";
-    if (a.scrollIntoView) {
-      a.scrollIntoView({ inline: "nearest", block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+    var left = a.offsetLeft;
+    var right = left + a.offsetWidth;
+    var viewL = track.scrollLeft;
+    var viewR = viewL + track.clientWidth;
+    var next = viewL;
+    if (left < viewL + 8) next = Math.max(0, left - 12);
+    else if (right > viewR - 8) next = right - track.clientWidth + 12;
+    if (next !== viewL && track.scrollTo) {
+      track.scrollTo({ left: next, behavior: reduceMotion ? "auto" : "smooth" });
     }
   }
   function setActive(a) {
