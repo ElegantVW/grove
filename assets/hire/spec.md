@@ -10,6 +10,8 @@ Relay activation: first submit triggers a confirm mail to us — click once, the
 hire: <teaser|pmv|setup|fix|sponsor> | <NAME> | <YYYY-MM-DD>
 ```
 
+`teaser` = short vertical edit (public lane, all-ages). `pmv` = custom PMV (18+, off-site).
+
 ## Body (key: value lines)
 
 ```

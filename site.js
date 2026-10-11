@@ -44,34 +44,15 @@
   document.querySelectorAll("main .chapter").forEach(function (s) { nav.observe(s); });
   // Up button: appears once the splash scrolls away.
   var up = document.getElementById("up");
-  function onScroll() {
-    up.hidden = window.scrollY < window.innerHeight;
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  up.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  onScroll();
-  // The clearing: only this button starts it. Fresh load is hush.
-  var song = document.getElementById("song");
-  var songWord = song && song.querySelector(".song-word");
-  function paintSong() {
-    if (!song) return;
-    var on = window.GroveClearing && window.GroveClearing.isAir();
-    song.setAttribute("aria-pressed", on ? "true" : "false");
-    if (songWord) songWord.textContent = on ? "air" : "hush";
-  }
-  if (song && window.GroveClearing) {
-    song.addEventListener("click", function () {
-      if (window.GroveClearing.isAir()) window.GroveClearing.hush();
-      else window.GroveClearing.start();
-      paintSong();
+  if (up) {
+    function onScroll() {
+      up.hidden = window.scrollY < window.innerHeight;
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    up.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-    document.addEventListener("visibilitychange", function () {
-      if (!window.GroveClearing.isAir()) return;
-      if (document.hidden) window.GroveClearing.pause();
-      else window.GroveClearing.resume();
-    });
+    onScroll();
   }
   // Clips: pause offscreen, honor reduced motion.
   var clips = Array.prototype.slice.call(document.querySelectorAll("video.clip"));

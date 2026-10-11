@@ -11,5 +11,6 @@ ffmpeg -i ../clips-new/pixie.mp4 -vf "scale=1080:-1,pad=1080:1920:(ow-iw)/2:(oh-
 ffmpeg -loop 1 -i ../../shots-new/menagerie.png -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" -t 7 -c:v libx264 -crf 23 menagerie-1080x1920.mp4
 ```
 
-Rules: SFW only here. Worlds teasers live in `@elegantvideoworlds` as
-7–10s crops, full cuts 18+ off-site only. No telemetry, no watermarks.
+Rules: the public studio lives here and on `@elegantvideoworlds` — numbered
+Worlds shorts, all-ages. Custom PMV (18+) is a separate hire, off-site.
+No telemetry, no watermarks.

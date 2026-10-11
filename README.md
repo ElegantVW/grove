@@ -2,7 +2,7 @@
 
 # Grove — the pink offline-first house 🌱
 
-Live: `https://elegantvw.github.io/grove/`. Resume (sendable, all-ages): `https://elegantvw.github.io/grove/resume.html`. For: hiring + worlds entry + shelf. Not an app store — Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the exception. Not for: explicit content.
+Live: `https://elegantvw.github.io/grove/`. Resume (sendable, all-ages): `https://elegantvw.github.io/grove/resume.html`. The glade (public Worlds studio, left column) sits beside the climb — same catalog as Instagram `@elegantvideoworlds`. For: hiring + worlds + shelf. Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the download exception. Custom PMV (18+) is a separate hire, off-site.
 
 Static front door for the whole column: fire → glass → house. Resume at `/resume.html`.
 Opens at the splash, drops you at the fire, climb by scrolling up.
@@ -33,7 +33,7 @@ cd ~/grove && python3 -m http.server 8000
 ```
 
 No build, no JS framework, no telemetry. Palette: `fae-kernel/docs/identity/IDENTITY.md`.
-Optional air: *the clearing* (GBA-shaped loop). Off until you tap **♪ hush**. Never autoplay; a reload is hush again.
+Optional air: EVW-994 in the glade. Off until you tap **♪ hush**. A reload is hush again.
 
 ## License
 

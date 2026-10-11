@@ -9,7 +9,8 @@
   document.querySelectorAll("[data-hire]").forEach(function (b) {
     b.addEventListener("click", function () {
       sel.value = b.getAttribute("data-hire");
-      title.textContent = "Request: " + sel.value;
+      var shown = { teaser: "short", pmv: "pmv 18+", setup: "setup", fix: "fix" };
+      title.textContent = "Request: " + (shown[sel.value] || sel.value);
       if (dlg.showModal) dlg.showModal();
     });
   });
