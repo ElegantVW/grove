@@ -16,7 +16,16 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://elegantvw.github.io/grove/assets/story/grove.png">
 <link rel="icon" type="image/svg+xml" href="assets/hero/grove.svg">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
+<script>
+try {
+  var _g = sessionStorage.getItem("grove-cross-enter");
+  if (_g) {
+    var _b = _g.split(":");
+    document.documentElement.classList.add("fx", "entering", "to-" + _b[0], "from-" + _b[1]);
+  }
+} catch (e) {}
+</script>
 </head>
 <body>
 <canvas id="stars" aria-hidden="true"></canvas>
@@ -34,7 +43,7 @@
   ecosystem: firmware we write, a screen lock that seals the glass, a house
   with readable walls — no cloud, no telemetry, no blobs you cannot rebuild.</p>
   <p>One person — Evenweaker / ElegantVW. Code for hire, a visual studio next door.</p>
-  <p><a class="descend" href="resume.html">resume</a> <a class="descend" href="#hire">hire me ↓</a> <a class="descend" href="#glade">the glade ↓</a> <a class="descend" href="#shelf">meet the shelf ↓</a></p>
+  <p><a class="descend" href="resume.html">resume</a> <a class="descend" href="#hire">hire me ↓</a> <a class="descend" href="glade.html">the glade</a> <a class="descend" href="#shelf">meet the shelf ↓</a></p>
 </header>
 
 <nav class="index" aria-label="Grove index">
@@ -45,7 +54,7 @@
   <a href="#book" data-layer="book">Book</a>
   <a href="#grove" data-layer="grove">Grove</a>
   <a href="resume.html" data-layer="resume">Resume</a>
-  <a href="#glade" data-layer="glade">Glade</a>
+  <a href="glade.html" data-layer="glade">Glade</a>
   <a href="#hire" data-layer="hire">Hire</a>
   <a href="#worlds" data-layer="worlds">Worlds</a>
   <a href="#sponsor" data-layer="sponsor">Sponsor</a>
@@ -53,49 +62,6 @@
   <a href="#faq" data-layer="faq">FAQ</a>
   <a href="#law" data-layer="law">Law</a>
 </nav>
-
-<div class="stage">
-<aside id="glade" aria-label="The glade">
-  <h2>The glade</h2>
-  <p class="glade-lede">The public studio — numbered Worlds shorts, same catalog as Instagram. The corner pill asks for air: EVW-994, with its own sound.</p>
-  <div class="glade-row">
-    <figure class="reel" data-air="true">
-      <video id="air-reel" poster="assets/worlds/evw-994.jpg" playsinline loop preload="metadata" muted>
-        <source src="assets/worlds/evw-994.mp4" type="video/mp4">
-      </video>
-      <button type="button" class="reel-play" aria-label="play Royal Summons">play</button>
-      <figcaption>EVW-994 · The Royal Summons</figcaption>
-    </figure>
-    <figure class="reel">
-      <video poster="assets/worlds/evw-009.jpg" playsinline loop preload="metadata" muted>
-        <source src="assets/worlds/evw-009.mp4" type="video/mp4">
-      </video>
-      <button type="button" class="reel-play" aria-label="play Last Dance">play</button>
-      <figcaption>EVW-009 · Last Dance</figcaption>
-    </figure>
-    <figure class="reel">
-      <video poster="assets/worlds/evw-013.jpg" playsinline loop preload="metadata" muted>
-        <source src="assets/worlds/evw-013.mp4" type="video/mp4">
-      </video>
-      <button type="button" class="reel-play" aria-label="play Stability">play</button>
-      <figcaption>EVW-013 · Stability &amp; Hazard Analysis</figcaption>
-    </figure>
-    <figure class="reel">
-      <video poster="assets/worlds/evw-l057.jpg" playsinline loop preload="metadata" muted>
-        <source src="assets/worlds/evw-l057.mp4" type="video/mp4">
-      </video>
-      <button type="button" class="reel-play" aria-label="play L057">play</button>
-      <figcaption>EVW-L057 · L057</figcaption>
-    </figure>
-    <figure class="reel">
-      <video poster="assets/worlds/evw-101.jpg" playsinline loop preload="metadata" muted>
-        <source src="assets/worlds/evw-101.mp4" type="video/mp4">
-      </video>
-      <button type="button" class="reel-play" aria-label="play ADAMASTOR">play</button>
-      <figcaption>EVW-101 · ADAMASTOR</figcaption>
-    </figure>
-  </div>
-</aside>
 
 <main>
 <section class="chapter cellar" id="shelf">
@@ -163,7 +129,7 @@ _|_|_|_
 ---+---
  / | \ 
 /  |  \</pre><strong>faeOS</strong><span>pink offline-first terminal</span></a>
-    <a class="tile" style="--app:#E8A0B4" href="#glade"><pre class="sigil" aria-hidden="true">  ~
+    <a class="tile" style="--app:#E8A0B4" href="glade.html"><pre class="sigil" aria-hidden="true">  ~
  ~ ~
   ~</pre><strong>Worlds</strong><span>public studio — numbered shorts in the glade</span></a>
     <a class="tile" style="--app:#8EC4C8" href="https://www.instagram.com/elegantvideoworlds"><pre class="sigil" aria-hidden="true"> [o]
@@ -390,7 +356,7 @@ _|_|_|_
   <a href="mailto:evenweaker@disroot.org">evenweaker@disroot.org</a> with what you want,
   your deadline, and your budget. Fixed scopes, 1–2 revisions, honest dates.</p>
   <p>Video has two lanes. The public studio is Worlds — numbered shorts in
-  <a href="#glade">the glade</a> and on
+  <a href="glade.html">the glade</a> and on
   <a href="https://www.instagram.com/elegantvideoworlds">Instagram</a>.
   The 18+ lane is custom PMV, a hire delivered off-site.</p>
   <article class="app" id="proof" style="--app:#F0D8A0">
@@ -436,7 +402,7 @@ _|_|_|_
 <section class="chapter" id="worlds">
   <h2>Elegant Video Worlds</h2>
   <p>The public studio. Numbered shorts, branded VHS/trident marks, hand-written lore.
-  Watch them in <a href="#glade">the glade</a>. The same catalog lives on
+  Watch them in <a href="glade.html">the glade</a>. The same catalog lives on
   <a href="https://www.instagram.com/elegantvideoworlds">Instagram @elegantvideoworlds</a>.</p>
   <p class="law">The 18+ lane is a separate hire: custom PMV, delivered off-site.
   Mail subject <code>hire: pmv</code>.</p>
@@ -483,7 +449,7 @@ git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;
 
 <section class="chapter cellar" id="faq">
   <h2>FAQ</h2>
-  <p><strong>Where is the video?</strong> Public Worlds live in the glade and on Instagram @elegantvideoworlds. Numbered shorts, all-ages.</p>
+  <p><strong>Where is the video?</strong> Public Worlds live in <a href="glade.html">the glade</a> and on Instagram @elegantvideoworlds. Numbered shorts, all-ages. Scroll the glade like a reel.</p>
   <p><strong>Where is the 18+ work?</strong> Custom PMV is a paid hire, delivered off-site. GitHub and this page stay all-ages.</p>
   <p><strong>Do you store passwords?</strong> No. Mail/host setups are live with you watching, secrets in keyring, never in git/logs. See each repo's <code>SECURITY.md</code>.</p>
   <p><strong>Revisions / refunds?</strong> 1–2 revisions in scope. If I miss the date, you get a fix week free or a refund on the undone part.</p>
@@ -498,18 +464,12 @@ git clone git@github.com:ElegantVW/pixie.git ~/pixie &amp;&amp; cd ~/pixie &amp;
   issues to the address in each repo's <code>SECURITY.md</code>.</p>
 </section>
 </main>
-</div>
 
-<footer><p>Grove · Kindling · faeOS — <a href="#top">↑ canopy</a> · <a href="resume.html">resume</a> · <a href="#hire">hire</a> · <a href="#glade">glade</a> · <a href="#worlds">worlds</a></p>
+<footer><p>Grove · Kindling · faeOS — <a href="#top">↑ canopy</a> · <a href="resume.html">resume</a> · <a href="#hire">hire</a> · <a href="glade.html">glade</a> · <a href="#worlds">worlds</a></p>
 <p>Static front door of a pink, offline-first terminal ecosystem. MIT —
 <a href="https://github.com/ElegantVW">ElegantVW</a>. Live free at <a href="https://elegantvw.github.io/grove/">elegantvw.github.io/grove</a>. Contact <a href="mailto:evenweaker@disroot.org">evenweaker@disroot.org</a>. No telemetry, no accounts, no blobs you cannot rebuild.</p></footer>
-<button type="button" id="song" aria-pressed="false" aria-label="EVW-994, optional air" title="optional air — stays off until you ask">
-  <span class="song-note" aria-hidden="true">♪</span>
-  <span class="song-word">hush</span>
-</button>
 <button id="up" hidden>↑ top</button>
 <script src="assets/cross.js"></script>
-<script src="assets/glade.js"></script>
 <script src="site.js"></script>
 <script src="assets/scroll.js"></script>
 <script src="assets/murmur.js"></script>

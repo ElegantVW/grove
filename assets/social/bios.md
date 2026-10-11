@@ -11,7 +11,7 @@ Link: hub URL. Pins: 1) desk+terminal photo 2) pixie answering clip 3) kur haiku
 
 ## Instagram @elegantvideoworlds (studio)
 Public visual studio. Numbered Worlds series. All-ages.
-Link: hub URL. Catalog: EVW-numbered (000/009/013/101/127/155/266/311/336/400/401/826/994), Elara, Red Horse pair, trident/VHS branding.
+Link: `https://elegantvw.github.io/grove/glade.html`. Catalog: EVW-numbered (000/009/013/101/127/155/266/311/336/400/401/826/994), Elara, Red Horse pair, trident/VHS branding.
 Pins: 1) EVW-000 (launch) 2) EVW-401/400 Red Horse pair 3) EVW-009 horsemen.
 
 ## Threads @evenweak3r

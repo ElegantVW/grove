@@ -13,7 +13,16 @@
 <meta property="og:url" content="https://elegantvw.github.io/grove/resume.html">
 <meta property="og:image" content="https://elegantvw.github.io/grove/assets/story/grove.png">
 <link rel="icon" type="image/svg+xml" href="assets/hero/grove.svg">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
+<script>
+try {
+  var _g = sessionStorage.getItem("grove-cross-enter");
+  if (_g) {
+    var _b = _g.split(":");
+    document.documentElement.classList.add("fx", "entering", "to-" + _b[0], "from-" + _b[1]);
+  }
+} catch (e) {}
+</script>
 </head>
 <body class="resume-page">
 <header class="splash" id="top">
@@ -96,7 +105,7 @@
 </main>
 
 <footer>
-  <p><a href="./">Grove</a> · <a href="./#hire">hire</a> ·
+  <p><a href="./">Grove</a> · <a href="glade.html">glade</a> · <a href="./#hire">hire</a> ·
   <a href="mailto:evenweaker@disroot.org">evenweaker@disroot.org</a></p>
   <p>All-ages page. No telemetry. MIT house, public source.</p>
 </footer>

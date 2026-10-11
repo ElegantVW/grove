@@ -16,11 +16,43 @@ html { scroll-behavior: smooth; background: #0B080B; }
 @view-transition { navigation: auto; }
 .hero-sigil { view-transition-name: grove-sigil; }
 ::view-transition-old(root),
-::view-transition-new(root) { animation-duration: 0.4s; }
+::view-transition-new(root) {
+  animation-duration: 0.55s;
+  animation-timing-function: ease;
+}
+@keyframes vt-out-left { to { opacity: 0; transform: translateX(-16%); } }
+@keyframes vt-in-right { from { opacity: 0; transform: translateX(16%); } }
+@keyframes vt-out-right { to { opacity: 0; transform: translateX(16%); } }
+@keyframes vt-in-left { from { opacity: 0; transform: translateX(-16%); } }
+@keyframes vt-out-up { to { opacity: 0; transform: translateY(-14%); } }
+@keyframes vt-in-down { from { opacity: 0; transform: translateY(14%); } }
+@keyframes vt-out-down { to { opacity: 0; transform: translateY(14%); } }
+@keyframes vt-in-up { from { opacity: 0; transform: translateY(-14%); } }
+html:active-view-transition-type(to-glade)::view-transition-old(root) { animation-name: vt-out-left; }
+html:active-view-transition-type(to-glade)::view-transition-new(root) { animation-name: vt-in-right; }
+html:active-view-transition-type(to-resume)::view-transition-old(root) { animation-name: vt-out-up; }
+html:active-view-transition-type(to-resume)::view-transition-new(root) { animation-name: vt-in-down; }
+html:active-view-transition-type(to-grove):active-view-transition-type(from-glade)::view-transition-old(root) { animation-name: vt-out-right; }
+html:active-view-transition-type(to-grove):active-view-transition-type(from-glade)::view-transition-new(root) { animation-name: vt-in-left; }
+html:active-view-transition-type(to-grove):active-view-transition-type(from-resume)::view-transition-old(root) { animation-name: vt-out-down; }
+html:active-view-transition-type(to-grove):active-view-transition-type(from-resume)::view-transition-new(root) { animation-name: vt-in-up; }
 html.leaving body {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.32s ease, transform 0.32s ease;
+  transition: opacity 0.52s ease, transform 0.52s ease;
+}
+html.leaving.to-glade body { transform: translateX(-16%); }
+html.leaving.to-resume body { transform: translateY(-14%); }
+html.leaving.to-grove.from-glade body { transform: translateX(16%); }
+html.leaving.to-grove.from-resume body { transform: translateY(14%); }
+html.entering body { opacity: 0; }
+html.entering.to-glade body { transform: translateX(16%); }
+html.entering.to-resume body { transform: translateY(14%); }
+html.entering.to-grove.from-glade body { transform: translateX(-16%); }
+html.entering.to-grove.from-resume body { transform: translateY(-14%); }
+html.entering.entered body {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.52s ease, transform 0.52s ease;
 }
 body {
   margin: 0;
@@ -36,7 +68,7 @@ body {
   z-index: 0;
   pointer-events: none;
 }
-header, nav, .stage, main, footer, #glade { position: relative; z-index: 1; }
+header, nav, main, footer { position: relative; z-index: 1; }
 h1, h2, h3 {
   font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace;
   color: var(--lilac);
@@ -92,30 +124,101 @@ pre { padding: 1rem; overflow-x: auto; border-left: 3px solid var(--violet); }
 .index a.active { color: var(--gold); text-decoration: underline; }
 
 /* chapters */
-.stage { position: relative; z-index: 1; }
 main { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
 
-/* the glade — visual portfolio beside the climb */
-#glade h2 { font-size: 1.5rem; margin: 0.4rem 0 0.3rem; }
-.glade-lede { color: var(--dusk); font-size: 0.9rem; margin: 0 0 1rem; max-width: 22rem; }
-.glade-row { display: flex; flex-direction: column; gap: 1.2rem; }
-.reel { position: relative; margin: 0; }
-.reel video {
+/* the glade — full-viewport shorts carousel */
+html:has(.glade-page) { overflow: hidden; height: 100%; }
+.glade-page {
+  margin: 0;
+  background: #0B080B;
+  overflow: hidden;
+  height: 100dvh;
+  height: 100svh;
+}
+.glade-page .glade-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: min(100%, 28rem);
+  margin: 0 auto;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem 1.6rem;
+  background: linear-gradient(to bottom, rgba(11, 8, 11, 0.88), transparent);
+  pointer-events: none;
+}
+.glade-page .glade-bar a,
+.glade-page .glade-bar button { pointer-events: auto; }
+.glade-home {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--parchment);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.glade-home .hero-sigil {
+  font-size: 0.55rem;
+  margin: 0;
+  line-height: 1.15;
+  color: var(--lilac);
+}
+.glade-bar h1 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--parchment);
+  letter-spacing: -0.02em;
+}
+.glade-links {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.glade-links a { margin-left: 0.55rem; text-decoration: none; }
+.shorts {
+  height: 100dvh;
+  height: 100svh;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  background: var(--night);
+}
+.shorts::-webkit-scrollbar { display: none; }
+.glade-page .reel {
+  position: relative;
+  margin: 0;
+  height: 100dvh;
+  height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  background: #0B080B;
+}
+.glade-page .reel video {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--shadow);
-  border-top: 2px solid var(--lilac);
   background: var(--night);
   cursor: pointer;
+  border: 0;
+  border-radius: 0;
 }
 .reel-play {
   position: absolute;
   left: 50%;
-  top: 42%;
+  top: 46%;
   transform: translate(-50%, -50%);
   min-width: 44px;
   min-height: 44px;
@@ -128,43 +231,40 @@ main { max-width: 860px; margin: 0 auto; padding: 0 1.2rem 4rem; }
   cursor: pointer;
   z-index: 2;
 }
-.reel.is-play .reel-play { opacity: 0.35; }
-.reel figcaption { margin-top: 0.4rem; }
-@media (min-width: 960px) {
-  .stage {
-    display: grid;
-    grid-template-columns: minmax(16rem, 24vw) minmax(0, 1fr);
-    gap: 0 1.4rem;
-    align-items: start;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 0.8rem;
-  }
-  #glade {
-    position: sticky;
-    top: 3.1rem;
-    height: calc(100vh - 3.1rem);
-    overflow-y: auto;
-    padding: 0.8rem 0.6rem 2rem 0.2rem;
-    border-right: 1px solid var(--shadow);
-  }
-  .stage > main { max-width: 860px; margin: 0; }
+.reel.is-play .reel-play { opacity: 0; pointer-events: none; }
+.glade-page .reel figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 3.2rem 1rem 1.2rem;
+  padding-bottom: max(1.2rem, env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, rgba(11, 8, 11, 0.82), transparent);
+  color: var(--parchment);
+  font-size: 0.95rem;
+  z-index: 2;
+  pointer-events: none;
 }
-@media (max-width: 959px) {
-  .glade-row {
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 0.4rem 1rem 1rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  #glade { padding: 0.8rem 0 0.4rem; }
-  #glade h2, .glade-lede { padding: 0 1rem; }
-  .reel {
-    flex: 0 0 min(70vw, 18rem);
-    scroll-snap-align: start;
-  }
+.glade-page .reel figcaption strong {
+  display: block;
+  color: var(--lilac);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
 }
+.reel-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.4rem;
+  color: var(--parchment);
+}
+.reel-end h2 { margin: 0.4rem 0; }
+.reel-end .sigil { color: var(--lilac); font-size: 1.1rem; }
+.reel-end .law { color: var(--dusk); font-size: 0.9rem; max-width: 22rem; }
+.reel-end .descend { margin: 0.4rem 0.3rem 0; }
 .chapter {
   padding: 3.5rem 0;
   border-top: 1px solid var(--shadow);
@@ -358,6 +458,9 @@ html.fx #hire.risen .app:nth-of-type(5) { animation-delay: 0.38s; }
 @media (max-width: 380px) {
   #song { font-size: 0.85rem; padding: 0.5rem 0.85rem; }
 }
+.glade-page #song {
+  left: max(1rem, calc(50vw - 13rem));
+}
 
 /* up button */
 #up {
@@ -467,7 +570,10 @@ button.pay { font: inherit; background: transparent; cursor: pointer; }
   html.fx #hire .app { opacity: 1; transform: none; animation: none; }
   @view-transition { navigation: none; }
   .hero-sigil { view-transition-name: none; }
-  html.leaving body { opacity: 1; transform: none; transition: none; }
+  html.leaving body,
+  html.entering body,
+  html.entering.entered body { opacity: 1; transform: none; transition: none; }
+  .shorts { scroll-behavior: auto; }
 }
 /* glitch titles — same language as the story clips, zero downloads */
 main .chapter h2 {
