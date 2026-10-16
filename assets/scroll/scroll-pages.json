@@ -101,22 +101,27 @@
   "id": "pixie",
   "name": "Pixie",
   "domain": "Mind",
-  "tagline": "Local agent — tools, files, and pink chat without the cloud.",
+  "tagline": "Local Rust familiar — tools, files, and pink chat without the cloud.",
   "intro": [
    "✦ Pixie ✦ is your household familiar. She thinks on a local model",
    "(via Menagerie), can touch files and tools, and answers in the",
    "same crystal frames as the rest of the house. Offline by default."
   ],
   "how": [
-   "pixie \"what is eating my disk?\" — ask in quotes.",
-   "She may call tools; `-v` shows the wires. Models wake through Menagerie.",
-   "Canonical repo: ElegantVW/pixie (faeOS keeps working copies).",
+   "bare pixie — TUI. Tab / Shift-Tab cycle Runes. Type; the prompt grows.",
+   "pixie \"what is eating my disk?\" — one-shot in quotes.",
+   "l look / o open on file cards. -v shows think + tools.",
+   "Canonical repo: ElegantVW/pixie. Build: ./build.sh install --house.",
    "If she is silent, try: menagerie ensure pixie"
   ],
   "cli": [
    {
+    "cmd": "pixie",
+    "desc": "Open the TUI"
+   },
+   {
     "cmd": "pixie \"…\"",
-    "desc": "Chat / agent turn"
+    "desc": "One-shot chat / agent turn"
    },
    {
     "cmd": "pixie -v \"…\"",
