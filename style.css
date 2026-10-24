@@ -346,6 +346,31 @@ html.fx .chapter.risen { opacity: 1; transform: none; }
 }
 .app h3 { margin-top: 0.4rem; color: var(--app, var(--lilac)); }
 .app { border-top: 2px solid var(--app, var(--shadow)); }
+.codex-asof {
+  font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--shadow);
+  margin: 0.35rem 0 0;
+}
+.codex-now,
+.codex-lately {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  text-align: left;
+  max-width: 40rem;
+}
+.codex-now li,
+.codex-lately li {
+  margin: 0.35rem 0;
+  padding: 0.15rem 0 0.15rem 0.7rem;
+  border-left: 2px solid var(--rose);
+  color: var(--parchment);
+  font-size: 0.92rem;
+}
+.codex-now strong,
+.codex-lately strong { color: var(--rose); }
+.codex-lately { opacity: 0.92; }
 /* shelf grid */
 .shelf {
   display: grid;
