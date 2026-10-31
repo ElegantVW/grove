@@ -110,7 +110,8 @@
   "how": [
    "bare pixie — TUI. Tab / Shift-Tab cycle Runes. Type; the prompt grows.",
    "pixie \"what is eating my disk?\" — one-shot in quotes.",
-   "l look / o open on file cards. -v shows think + tools.",
+   "C-l look hops the GPU eye. A-v speak. Options Auto covers WhatsApp away.",
+   "pixie --auto lingers after the TUI. pixie --self-test proves the filter.",
    "Canonical repo: ElegantVW/pixie. Build: ./build.sh install --house.",
    "If she is silent, try: menagerie ensure pixie"
   ],
@@ -130,6 +131,14 @@
    {
     "cmd": "ask \"…\"",
     "desc": "Sibling entry to the same engine"
+   },
+   {
+    "cmd": "pixie --auto",
+    "desc": "WhatsApp away secretary (user unit; TUI may quit)"
+   },
+   {
+    "cmd": "pixie --self-test",
+    "desc": "Prove Auto keep/skip with no WhatsApp"
    },
    {
     "cmd": "menagerie ensure pixie",
