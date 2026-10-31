@@ -567,19 +567,31 @@ html.fx #hire.risen .app:nth-of-type(5) { animation-delay: 0.38s; }
 /* proof offer: own thing, gold, first in hire */
 #proof { border-width: 2px; background: rgba(240, 216, 160, 0.07); }
 #proof h3 { margin-top: 0; font-size: 1.5rem; }
-/* pay buttons: house rose pills, no Stripe blue anywhere */
-.pay {
+/* Request is the booking door — filled, loud, hard to miss */
+.request {
   display: inline-block;
-  padding: 0.25rem 0.9rem;
-  border: 1px solid var(--rose);
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--rose);
   border-radius: 999px;
-  color: var(--rose);
+  color: var(--night);
+  background: var(--rose);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   white-space: nowrap;
+  cursor: pointer;
 }
-.pay:hover { background: var(--rose); color: var(--night); }
-button.pay { font: inherit; background: transparent; cursor: pointer; }
+.request:hover { filter: brightness(1.08); }
+button.request { font: inherit; }
+#hire .request { width: 100%; max-width: 22rem; text-align: center; }
+.request-chip {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 40;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
 /* suite vessel pills — same house language as .pay; tint from --app */
 .dl {
   display: flex;

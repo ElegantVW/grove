@@ -2,7 +2,7 @@
 
 # Grove — the pink house that runs without the internet 🌱
 
-Live: `https://elegantvw.github.io/grove/`. Resume (sendable, all-ages): `https://elegantvw.github.io/grove/resume.html`. The glade (public Worlds shorts): `https://elegantvw.github.io/grove/glade.html` — vertical snap carousel, same catalog as Instagram `@elegantvideoworlds`. For: hiring + worlds + shelf. Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the download exception. Custom PMV (18+) is a separate hire, off-site.
+Live: `https://elegantvw.github.io/grove/`. Resume (sendable, all-ages): `https://elegantvw.github.io/grove/resume.html`. The glade (public Worlds shorts): `https://elegantvw.github.io/grove/glade.html` — vertical snap carousel, same catalog as Instagram `@elegantvideoworlds`. For: hiring + worlds + shelf. Work is booked with **Request work** (a form), not a payment button. Magpie `nest-egg`, Siren `sea-glass`, and Goblin `letter-pouch` on the cards are the download exception. Custom PMV (18+) is a separate hire, off-site.
 
 Static front door for the whole column: fire → glass → house. Resume at `/resume.html`. Glade at `/glade.html`.
 Opens at the splash, drops you at the fire, climb by scrolling up.
