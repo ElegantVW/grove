@@ -12,6 +12,7 @@ Opens at the splash, drops you at the fire, climb by scrolling up.
 * 🔥 [Kindling](https://github.com/ElegantVW/kindling) — first light
 * 🛡️ [Bulwark](https://github.com/ElegantVW/bulwark) — lock and guard
 * ✨ [Pixie](https://github.com/ElegantVW/pixie) — the helper; covers WhatsApp when you step away
+* 🐾 [Menagerie](https://github.com/ElegantVW/menagerie) — local mouths, one GPU tenant
 * 🔎 [Magpie](https://github.com/ElegantVW/magpie) — sourced manuals
 * 🎵 [Siren](https://github.com/ElegantVW/siren) — plays your music
 * ✉️ [Goblin](https://github.com/ElegantVW/goblin) — private mail
